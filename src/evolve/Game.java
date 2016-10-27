@@ -2,6 +2,8 @@ package evolve;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferStrategy;
 
 /**
@@ -43,6 +45,7 @@ public class Game  implements Runnable {
         gameState = new GameState(this, world);
         menuState = new MenuState(this);
         State.setState(gameState);
+
     }
 
     private void render() {
@@ -53,6 +56,7 @@ public class Game  implements Runnable {
         }
         g = bs.getDrawGraphics();
         g.clearRect(0, 0, width, height);
+
 
         if (State.getState() != null) {
             State.getState().render(g);
@@ -133,5 +137,9 @@ public class Game  implements Runnable {
 
     public World getWorld() {
         return world;
+    }
+
+    public ProgramPanel getPanel() {
+        return this.panel;
     }
 }

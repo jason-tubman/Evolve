@@ -3,6 +3,7 @@ package evolve;
 import javax.swing.*;
 import java.awt.*;
 
+
 /**
  * Created by Jason on 27/10/16.
  */
@@ -42,6 +43,7 @@ public class ProgramPanel {
     public Canvas getCanvas() {
         return canvas;
     }
+
     public JFrame getFrame() {
         return frame;
     }
