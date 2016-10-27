@@ -34,16 +34,16 @@ public class CreatureInstance extends Creature {
     }
 
     public void findMove() {
-        if (y >= 768 - height) {
+        if (y >= world.getWidth() - height) {
             yDirection = -yDirection;
         }
-        if (x >= 1024 - width) {
+        if (x >= world.getHeight() - width) {
             xDirection= -xDirection;
         }
-        if (y <= 0) {
+        if (y <= height) {
             yDirection = -yDirection;
         }
-        if (x <= 0) {
+        if (x <= width) {
             xDirection= -xDirection;
         }
         angle = Math.atan2(yDirection, xDirection);

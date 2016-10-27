@@ -13,11 +13,11 @@ public class World {
         this.game = game;
     }
 
-    private int getHeight() {
+    public int getHeight() {
         return this.height;
     }
 
-    private int getWidth() {
+    public int getWidth() {
         return this.width;
     }
 
