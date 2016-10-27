@@ -26,32 +26,36 @@ public class CreatureInstance extends Creature {
 
     @Override
     public void tick() {
-        move();
+        findMove();
+    }
+    public void makeMove(){
+        y += yDirection;
+        x += xDirection;
     }
 
-    public void move() {
-        if (y > 0 && y < 768-height*2 && x > 0 && x < 1024 - width) {
-            y += yDirection;
-            x += xDirection;
-        } else {
-            getDirection();
-            if (y + yDirection > 0 && y + yDirection < 768-height
-                    && x + xDirection > 0 && x + xDirection < 1024 - width) {
-                y += yDirection;
-                x += xDirection;
-            } else {
-                getDirection();
-            }
+    public void findMove() {
+        if (y >= 768 - height) {
+            yDirection = -yDirection;
         }
+        if (x >= 1024 - width) {
+            xDirection= -xDirection;
+        }
+        if (y <= 0) {
+            yDirection = -yDirection;
+        }
+        if (x <= 0) {
+            xDirection= -xDirection;
+        }
+        angle = Math.atan2(yDirection, xDirection);
+        angle = angle + 1.57;
+        makeMove();
     }
 
     public void getDirection() {
         yDirection = maxSpeed * (Math.random() > 0.5? 1 : -1);
         xDirection = maxSpeed * (Math.random() > 0.5? 1 : -1);
-
         angle = Math.atan2(yDirection, xDirection);
-
-
+        angle = angle + 1.57;
     }
 
     @Override
@@ -59,7 +63,7 @@ public class CreatureInstance extends Creature {
         Graphics2D g2d = (Graphics2D)g.create();
         g2d.rotate(angle, x, y);
         g2d.drawImage(imageLoader.loadImage("/resources/Placeholder.png"), (int)x, (int)y, height, width, null);
-        g2d.rotate(Math.toRadians(angle), x, y);
+        g2d.rotate(-angle, x, y);
         g2d.dispose();
     }
 }
