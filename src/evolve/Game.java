@@ -21,10 +21,14 @@ public class Game  implements Runnable {
     private Thread thread;
 
     private boolean running = false;
+    private World world = new World(this, 1024, 768);
 
     //States
     private State gameState;
     private State menuState;
+
+    //Camera
+    private Camera camera;
 
     public Game(String title, int width, int height) {
         this.width = width;
@@ -34,8 +38,9 @@ public class Game  implements Runnable {
 
     private void init(){
         this.panel = new ProgramPanel(title, this.width, this.height);
+        camera = new Camera(0, 0);
 
-        gameState = new GameState(this);
+        gameState = new GameState(this, world);
         menuState = new MenuState(this);
         State.setState(gameState);
     }
@@ -124,5 +129,9 @@ public class Game  implements Runnable {
 
     public double getFPS() {
         return framesPerSecondCount;
+    }
+
+    public World getWorld() {
+        return world;
     }
 }

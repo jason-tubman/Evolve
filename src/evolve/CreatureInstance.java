@@ -8,19 +8,26 @@ import java.util.Random;
  */
 public class CreatureInstance extends Creature {
 
-    private Game game;
-    private float maxSpeed = 3;
+    private World world;
+    private float maxSpeed;
+    private float health;
     float yDirection = 0;
     float xDirection = 0;
 
-    public CreatureInstance(Game game, float x, float y) {
-        super(x, y);
-        this.game = game;
+    public CreatureInstance(Game game, float x, float y, int height, int width) {
+        super(game, x, y, height, width);
+        this.maxSpeed = this.getMaxSpeed();
+        this.health = this.getHealth();
+        this.world = game.getWorld();
         getDirection();
     }
 
     @Override
     public void tick() {
+        move();
+    }
+
+    public void move() {
         if (y > 20 && y < 737 && x > 20 && x < 990) {
             y += yDirection;
             x += xDirection;
@@ -33,8 +40,6 @@ public class CreatureInstance extends Creature {
             } else {
                 getDirection();
             }
-
-
         }
     }
 

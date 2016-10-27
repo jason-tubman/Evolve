@@ -8,12 +8,13 @@ import java.awt.*;
 public class GameState extends State{
 
     private CreatureInstance creatureInstance;
-
-    public GameState(Game game) {
+    private World world;
+    public GameState(Game game, World world) {
         super(game);
         float y =  1 + (int)(Math.random() * 747);
         float x =  1 + (int)(Math.random() * 990);
-        creatureInstance = new CreatureInstance(game, x, y);
+        creatureInstance = new CreatureInstance(game, x, y, 50, 50);
+        this.world = world;
 
     }
 
