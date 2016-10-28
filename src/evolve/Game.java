@@ -12,7 +12,7 @@ import java.awt.image.BufferStrategy;
 public class Game  implements Runnable {
     private ProgramPanel panel;
     private float framesPerSecondCount = 0;
-
+    private int seconds = 0;
     private BufferStrategy bs;
     private Graphics g;
 
@@ -26,7 +26,7 @@ public class Game  implements Runnable {
     private World world = new World(this, 1024, 768);
 
     //States
-    private State gameState;
+    private GameState gameState;
     private State menuState;
 
     //Camera
@@ -99,6 +99,7 @@ public class Game  implements Runnable {
                 delta--;
             }
             if (timer >= 1000000000) {
+                seconds++;
                 framesPerSecondCount = ticks;
                 ticks = 0;
                 timer = 0;
@@ -141,5 +142,14 @@ public class Game  implements Runnable {
 
     public ProgramPanel getPanel() {
         return this.panel;
+    }
+
+    public int getSeconds() {
+
+        return this.seconds;
+    }
+
+    public GameState getGameState() {
+        return this.gameState;
     }
 }

@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Created by Jason on 27/10/16.
@@ -38,11 +38,16 @@ public class GameState extends State{
     public void createCreature() {
         float y =  50 + (int)(Math.random() * 768-100);
         float x =  51 + (int)(Math.random() * 1024-101);
-        creatureInstances.add(new CreatureInstance(game, x, y, 50, 50, 10, 10));
+        creatureInstances.add(new CreatureInstance(this.game, x, y, 50, 50, 3, 10, 5, 0));
+    }
+
+    public ArrayList<CreatureInstance> getCreatures() {
+        return creatureInstances;
     }
 
     @Override
     public void tick() {
+
         for (int i = 0; i < creatureInstances.size(); i++) {
             creatureInstances.get(i).tick();
         }
