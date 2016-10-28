@@ -38,7 +38,7 @@ public class GameState extends State{
     public void createCreature() {
         float y =  50 + (int)(Math.random() * 768-100);
         float x =  51 + (int)(Math.random() * 1024-101);
-        creatureInstances.add(new CreatureInstance(game, x, y, 50, 50));
+        creatureInstances.add(new CreatureInstance(game, x, y, 50, 50, 10, 10));
     }
 
     @Override

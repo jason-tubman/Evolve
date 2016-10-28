@@ -1,25 +1,23 @@
 package evolve;
 
 import java.awt.*;
-import java.awt.geom.AffineTransform;
-import java.util.Random;
 
 /**
  * Created by Jason on 27/10/16.
  */
-public class CreatureInstance extends Creature {
+public class CreatureInstance extends Entity {
 
     private World world;
     private float maxSpeed;
-    private float health;
+    private int health;
     float yDirection = 0;
     float xDirection = 0;
     double angle;
 
-    public CreatureInstance(Game game, float x, float y, int height, int width) {
+    public CreatureInstance(Game game, float x, float y, int height, int width, int health, float maxSpeed) {
         super(game, x, y, height, width);
-        this.maxSpeed = this.getMaxSpeed();
-        this.health = this.getHealth();
+        this.maxSpeed =  maxSpeed;
+        this.health = health;
         this.world = game.getWorld();
         getDirection();
     }
@@ -73,4 +71,14 @@ public class CreatureInstance extends Creature {
         g2d.rotate(-angle, x, y);
         g2d.dispose();
     }
+
+    public int getHealth() {
+        return this.health;
+    }
+    public float getMaxSpeed() {
+        return this.maxSpeed;
+    }
+
+
+
 }

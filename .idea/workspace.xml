@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fc00a94-2d97-4707-8b30-3f8ab6332c02" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/evolve/evolve/Creature.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/evolve/Creature.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/evolve/evolve/CreatureInstance.class" afterPath="$PROJECT_DIR$/out/production/evolve/evolve/CreatureInstance.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/evolve/evolve/GameState.class" afterPath="$PROJECT_DIR$/out/production/evolve/evolve/GameState.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/evolve/CreatureInstance.java" afterPath="$PROJECT_DIR$/src/evolve/CreatureInstance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/evolve/Game.java" afterPath="$PROJECT_DIR$/src/evolve/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/evolve/GameState.java" afterPath="$PROJECT_DIR$/src/evolve/GameState.java" />
     </list>
     <ignored path="Evolve.iws" />
@@ -27,12 +30,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Creature.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/evolve/Creature.java">
+      <file leaf-file-name="CreatureInstance.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/evolve/CreatureInstance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-              <folding />
+            <state relative-caret-position="187">
+              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+              <folding>
+                <element signature="e#597#598#0" expanded="true" />
+                <element signature="e#623#624#0" expanded="true" />
+                <element signature="e#2025#2026#0" expanded="true" />
+                <element signature="e#2059#2060#0" expanded="true" />
+                <element signature="e#2092#2093#0" expanded="true" />
+                <element signature="e#2128#2129#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -40,25 +50,12 @@
       <file leaf-file-name="GameState.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/evolve/GameState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+            <state relative-caret-position="272">
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#698#699#0" expanded="true" />
                 <element signature="e#746#747#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreatureInstance.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/evolve/CreatureInstance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
-              <folding>
-                <element signature="e#655#656#0" expanded="true" />
-                <element signature="e#681#682#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -97,14 +94,14 @@
         <option value="$PROJECT_DIR$/out/production/evolve/evolve/Creature.class" />
         <option value="$PROJECT_DIR$/src/evolve/State.java" />
         <option value="$PROJECT_DIR$/src/evolve/Entity.java" />
-        <option value="$PROJECT_DIR$/src/evolve/Creature.java" />
         <option value="$PROJECT_DIR$/src/evolve/Camera.java" />
         <option value="$PROJECT_DIR$/src/evolve/World.java" />
         <option value="$PROJECT_DIR$/src/evolve/ProgramPanel.java" />
         <option value="$PROJECT_DIR$/src/evolve/Assets.java" />
         <option value="$PROJECT_DIR$/src/evolve/Game.java" />
-        <option value="$PROJECT_DIR$/src/evolve/CreatureInstance.java" />
         <option value="$PROJECT_DIR$/src/evolve/GameState.java" />
+        <option value="$PROJECT_DIR$/src/evolve/Creature.java" />
+        <option value="$PROJECT_DIR$/src/evolve/CreatureInstance.java" />
       </list>
     </option>
   </component>
@@ -677,12 +674,12 @@
       <option name="presentableId" value="Default" />
       <updated>1477539497619</updated>
       <workItem from="1477539499930" duration="10236000" />
-      <workItem from="1477625919972" duration="1382000" />
+      <workItem from="1477625919972" duration="1693000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11618000" />
+    <option name="totallyTimeSpent" value="11929000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="5" width="1934" height="1033" extended-state="0" />
@@ -762,11 +759,18 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/evolve/Creature.java">
+    <entry file="file://$PROJECT_DIR$/src/evolve/CreatureInstance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#2025#2026#0" expanded="true" />
+            <element signature="e#2059#2060#0" expanded="true" />
+            <element signature="e#2092#2093#0" expanded="true" />
+            <element signature="e#2128#2129#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -912,29 +916,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/evolve/Creature.java">
+    <entry file="file://$PROJECT_DIR$/src/evolve/CreatureInstance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+        <state relative-caret-position="1224">
+          <caret line="74" column="5" selection-start-line="11" selection-start-column="3" selection-end-line="74" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/evolve/CreatureInstance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+        <state relative-caret-position="187">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
           <folding>
-            <element signature="e#655#656#0" expanded="true" />
-            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#2025#2026#0" expanded="true" />
+            <element signature="e#2059#2060#0" expanded="true" />
+            <element signature="e#2092#2093#0" expanded="true" />
+            <element signature="e#2128#2129#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/evolve/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+        <state relative-caret-position="272">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#698#699#0" expanded="true" />
