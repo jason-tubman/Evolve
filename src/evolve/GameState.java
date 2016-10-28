@@ -15,20 +15,17 @@ public class GameState extends State{
     private World world;
     public GameState(Game game, World world) {
         super(game);
-        float y =  1 + (int)(Math.random() * 768-51);
-        float x =  1 + (int)(Math.random() * 1024-51);
-        creatureInstances.add(new CreatureInstance(game, x, y, 50, 50));
-
+        createCreature();
         this.world = world;
+        addButton();
+    }
 
-        //ADD BUTTON FOR TESTING
+    public void addButton() {
         JButton addButton = new JButton("ADD");
         addButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
-                float y =  1 + (int)(Math.random() * 768-51);
-                float x =  1 + (int)(Math.random() * 1024-51);
-                creatureInstances.add(new CreatureInstance(game, x, y, 50, 50));
+                createCreature();
             }
         });
         addButton.setBounds(0, 0, 200, 50);
@@ -36,9 +33,12 @@ public class GameState extends State{
         Canvas canvas = this.game.getPanel().getCanvas();
         this.game.getPanel().getFrame().add(canvas);
         this.game.getPanel().getFrame().pack();
+    }
 
-
-
+    public void createCreature() {
+        float y =  50 + (int)(Math.random() * 768-100);
+        float x =  51 + (int)(Math.random() * 1024-101);
+        creatureInstances.add(new CreatureInstance(game, x, y, 50, 50));
     }
 
     @Override

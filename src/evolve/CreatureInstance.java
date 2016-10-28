@@ -34,20 +34,27 @@ public class CreatureInstance extends Creature {
     }
 
     public void findMove() {
-        if (y >= world.getWidth() - height) {
+        if (y >= world.getWidth() - height+1) {
             yDirection = -yDirection;
+            angle = Math.atan2(yDirection, xDirection);
+            angle = angle + 1.57;
         }
-        if (x >= world.getHeight() - width) {
+        if (x >= world.getHeight() - width+1) {
             xDirection= -xDirection;
+            angle = Math.atan2(yDirection, xDirection);
+            angle = angle + 1.57;
         }
-        if (y <= height) {
+        if (y <= height+1) {
             yDirection = -yDirection;
+            angle = Math.atan2(yDirection, xDirection);
+            angle = angle + 1.57;
         }
-        if (x <= width) {
+        if (x <= width+1) {
             xDirection= -xDirection;
+            angle = Math.atan2(yDirection, xDirection);
+            angle = angle + 1.57;
         }
-        angle = Math.atan2(yDirection, xDirection);
-        angle = angle + 1.57;
+
         makeMove();
     }
 
@@ -62,7 +69,7 @@ public class CreatureInstance extends Creature {
     public void render(Graphics g) {
         Graphics2D g2d = (Graphics2D)g.create();
         g2d.rotate(angle, x, y);
-        g2d.drawImage(imageLoader.loadImage("/resources/Placeholder.png"), (int)x, (int)y, height, width, null);
+        g2d.drawImage(Assets.creatureSprite, (int)x, (int)y, height, width, null);
         g2d.rotate(-angle, x, y);
         g2d.dispose();
     }

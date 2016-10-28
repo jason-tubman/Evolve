@@ -40,8 +40,8 @@ public class Game  implements Runnable {
 
     private void init(){
         this.panel = new ProgramPanel(title, this.width, this.height);
+        Assets.init();
         camera = new Camera(0, 0);
-
         gameState = new GameState(this, world);
         menuState = new MenuState(this);
         State.setState(gameState);
