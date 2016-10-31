@@ -34,7 +34,7 @@ public class ProgramPanel {
         canvas.setPreferredSize(new Dimension(width, height));
         canvas.setMaximumSize(new Dimension(width, height));
         canvas.setMinimumSize(new Dimension(width, height));
-
+        canvas.setBackground(new Color(1, 7, 23));
         frame.add(canvas);
         frame.pack();
 

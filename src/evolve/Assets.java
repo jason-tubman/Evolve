@@ -7,11 +7,16 @@ import java.awt.image.BufferedImage;
  */
 public class Assets {
 
-    public static BufferedImage creatureSprite;
+    public static BufferedImage herbivoreSprite;
+    public static BufferedImage foodSprite;
+    public static BufferedImage carnivoreSprite;
+    public static BufferedImage eggSprite;
+
 
     public static void init() {
 
-        creatureSprite = imageLoader.loadImage("/resources/Placeholder.png");
-
+        herbivoreSprite = imageLoader.loadImage("/resources/Herbivore.png");
+        foodSprite = imageLoader.loadImage("/resources/food.png");
+        eggSprite = imageLoader.loadImage("/resources/egg.png");
     }
 }

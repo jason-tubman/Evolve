@@ -7,10 +7,10 @@ import java.awt.*;
  */
 public abstract class Entity {
     protected Game game;
-    protected float x, y;
-    protected int width, height;
+    protected double x, y;
+    protected double width, height;
 
-    public Entity (Game game, float x, float y, int height, int width) {
+    public Entity (Game game, double x, double y, double height, double width) {
         this.x = x;
         this.y = y;
         this.width = width;

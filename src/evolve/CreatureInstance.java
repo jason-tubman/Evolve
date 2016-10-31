@@ -8,31 +8,38 @@ import java.awt.*;
 public class CreatureInstance extends Entity {
     private Game game;
     private World world;
-    private float maxSpeed;
-    private int lifeTime;
-    private int eggTime;
-    private int eggRequirement;
-    private int foodAmount;
 
+    private double height;
+    private double width;
+    private double startingHealth;
+    private double maxSpeed;
+    private double health;
+    private double eggTime;
+    private double foodAmount;
+    private String type;
+    private Boolean eggLayed = false;
 
-    private int timeBorn;
+    private double timeBorn;
 
-    float yDirection = 0;
-    float xDirection = 0;
-    double angle;
+    double yDirection = 0;
+    double xDirection = 0;
 
-    public CreatureInstance(Game game, float x, float y, int height,
-                            int width, float maxSpeed,
+    public CreatureInstance(Game game, String type, double x, double y, double height,
+                            double width, float maxSpeed,
                             int lifeTime, int eggTime, int foodAmount) {
         super(game, x, y, height, width);
         this.maxSpeed =  maxSpeed; // How fast it can move
+
+        this.height = height;
+        this.width = width;
+
         this.world = game.getWorld();
         this.game = game;
-        this.lifeTime = lifeTime; //Health starts here and falls to 0
+        this.health = lifeTime;
+        this.startingHealth = lifeTime;
+        this.type = type;
         this.eggTime = eggTime; //How long it takes to lay an egg
-        this.eggRequirement = lifeTime/5; //How much food it requires to lay an egg
 
-        this.lifeTime = lifeTime; //Health starts here and falls to 0
 
         this.foodAmount = foodAmount; //How much food it's grabbed
         timeBorn = game.getSeconds();
@@ -41,6 +48,7 @@ public class CreatureInstance extends Entity {
 
     @Override
     public void tick() {
+        checkEgg();
         if (getLifeRemaining() <= 0) {
             killCreature();
         }
@@ -54,23 +62,18 @@ public class CreatureInstance extends Entity {
     public void findMove() {
         if (y >= world.getWidth() - height+1) {
             yDirection = -yDirection;
-            angle = Math.atan2(yDirection, xDirection);
-            angle = angle + 1.57;
         }
         if (x >= world.getHeight() - width+1) {
             xDirection= -xDirection;
-            angle = Math.atan2(yDirection, xDirection);
-            angle = angle + 1.57;
         }
         if (y <= height+1) {
             yDirection = -yDirection;
-            angle = Math.atan2(yDirection, xDirection);
-            angle = angle + 1.57;
         }
         if (x <= width+1) {
             xDirection= -xDirection;
-            angle = Math.atan2(yDirection, xDirection);
-            angle = angle + 1.57;
+        }
+        if (Math.random() > 0.99) {
+            getDirection();
         }
 
         makeMove();
@@ -79,24 +82,26 @@ public class CreatureInstance extends Entity {
     public void getDirection() {
         yDirection = maxSpeed * (Math.random() > 0.5? 1 : -1);
         xDirection = maxSpeed * (Math.random() > 0.5? 1 : -1);
-        angle = Math.atan2(yDirection, xDirection);
-        angle = angle + 1.57;
     }
 
     @Override
     public void render(Graphics g) {
-        Graphics2D g2d = (Graphics2D)g.create();
-        g2d.rotate(angle, x, y);
-        g2d.drawImage(Assets.creatureSprite, (int)x, (int)y, height, width, null);
-        g2d.rotate(-angle, x, y);
-        g2d.dispose();
+        g.drawImage(Assets.herbivoreSprite, (int)x, (int)y, (int)height, (int)width, null);
     }
 
-    public int getLifeRemaining() {
-        return (lifeTime - (timeBorn + this.game.getSeconds()));
+    public double getLifeRemaining() {
+        return (health - (this.game.getSeconds() - timeBorn));
     }
     public void killCreature() {
         this.game.getGameState().getCreatures().remove(this);
+
+    }
+    public void checkEgg() {
+        if ((this.game.getSeconds() - timeBorn) > eggTime && eggLayed == false) {
+            game.getGameState().getEggs().add(new eggInstance(game, "Herbivore", this.x,
+                    this.y, this.height, this.width, (int)this.maxSpeed, (int)this.startingHealth, (int) this.eggTime));
+            eggLayed = true;
+        }
 
     }
 
