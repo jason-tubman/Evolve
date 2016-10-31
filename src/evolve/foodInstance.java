@@ -12,7 +12,7 @@ public class foodInstance extends Entity {
     private double height = 5;
     private double width = 5;
 
-    private double maxSpeed = 0.1;
+    private double maxSpeed = 0.025;
 
     double yDirection = 0;
     double xDirection = 0;

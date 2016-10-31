@@ -9,6 +9,8 @@ public class CreatureInstance extends Entity {
     private Game game;
     private World world;
 
+    private int generation;
+
     private double height;
     private double width;
     private double startingHealth;
@@ -25,11 +27,11 @@ public class CreatureInstance extends Entity {
     double xDirection = 0;
 
     public CreatureInstance(Game game, String type, double x, double y, double height,
-                            double width, float maxSpeed,
-                            int lifeTime, int eggTime, int foodAmount) {
+                            double width, double maxSpeed,
+                            double lifeTime, double eggTime, double foodAmount, int generation) {
         super(game, x, y, height, width);
         this.maxSpeed =  maxSpeed; // How fast it can move
-
+        this.generation = generation;
         this.height = height;
         this.width = width;
 
@@ -98,8 +100,9 @@ public class CreatureInstance extends Entity {
     }
     public void checkEgg() {
         if ((this.game.getSeconds() - timeBorn) > eggTime && eggLayed == false) {
-            game.getGameState().getEggs().add(new eggInstance(game, "Herbivore", this.x,
-                    this.y, this.height, this.width, (int)this.maxSpeed, (int)this.startingHealth, (int) this.eggTime));
+            game.getGameState().getEggs().add(new eggInstance(game, this.type, this.x,
+                    this.y, this.height, this.width, (int)this.maxSpeed,
+                    (int)this.startingHealth, (int) this.eggTime, this.generation));
             eggLayed = true;
         }
 

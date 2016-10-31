@@ -19,29 +19,13 @@ public class GameState extends State{
         super(game);
         createCreature();
         this.world = world;
-        addButton();
-    }
-
-    public void addButton() {
-        JButton addButton = new JButton("ADD");
-        addButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e)
-            {
-                createCreature();
-            }
-        });
-        addButton.setBounds(0, 0, 200, 50);
-        this.game.getPanel().getFrame().getContentPane().add(addButton);
-        Canvas canvas = this.game.getPanel().getCanvas();
-        this.game.getPanel().getFrame().add(canvas);
-        this.game.getPanel().getFrame().pack();
     }
 
     public void createCreature() {
         for (int i = 0; i < 50; i++) {
             float y = 50 + (int) (Math.random() * 768 - 100);
             float x = 51 + (int) (Math.random() * 1024 - 101);
-            creatureInstances.add(new CreatureInstance(this.game, "Herbivore", x, y, 20, 20, 1, 10, 5, 0));
+            creatureInstances.add(new CreatureInstance(this.game, "Herbivore", x, y, 20, 20, 1, 25, 5, 0, 0));
             //game, type, x, y, width, height, speed, lifetime, eggtime, foodAmount
         }
         for (int i = 0; i < 50; i++) {
@@ -71,9 +55,72 @@ public class GameState extends State{
 
     }
 
+    public void hatchEgg() {
+        for (int i = 0; i < eggInstances.size(); i++) {
+            if (game.getSeconds() - eggInstances.get(i).getTimeLayed() >= 15) {
+                //Calculate the new type
+                //Calculate the new x
+                //calculate the new y
+                String newType;
+                double newX = eggInstances.get(i).getX();
+                double newY = eggInstances.get(i).getY();
+                if (eggInstances.get(i).getEggType() == "Herbivore") {
+                    if(Math.random() < 0.01) {
+                        newType = "Carnivore";
+                    } else {
+                        newType = "Herbivore";
+                    }
+                } else {
+                    newType = "Carnivore";
+                }
+                while (Math.random() < 0.33) {
+                    newX++;
+                    newY++;
+                }
+
+                //Calculate the new height
+                //calculate the new width
+                double newHeight  = eggInstances.get(i).getHeight();
+                double newWidth = eggInstances.get(i).getWidth();
+                while (Math.random() < 0.33) {
+                    newHeight++;
+                    newWidth++;
+                }
+                //Calculate the new max speed
+                double newMaxSpeed = eggInstances.get(i).getMaxSpeed();
+                while (Math.random() < 0.33) {
+                    newMaxSpeed += 0.25;
+                }
+
+                //Calculate the new max health
+                double newHealth = eggInstances.get(i).getHealth();
+                while (Math.random() < 0.33) {
+                    newHealth += 0.25;
+                }
+
+                //calculate the new eggTime
+                double newEggTime = eggInstances.get(i).getEggTime();
+                while (Math.random() < 0.33) {
+                    newEggTime -= 0.15;
+                }
+
+                double newfoodAmount = 2;
+                //Calculate the generation
+                int newGeneration = eggInstances.get(i).getGeneration() + 1;
+
+                //destroy the egg
+                eggInstances.remove(i);
+                //HATCH THE EGG
+                creatureInstances.add(new CreatureInstance(game, newType, newX, newY, newHeight, newWidth,
+                        newMaxSpeed, newHealth, newEggTime, newfoodAmount, newGeneration));
+
+            }
+        }
+    }
+
     @Override
     public void tick() {
-
+        hatchEgg();
         for (int i = 0; i < foodInstances.size(); i++) {
             foodInstances.get(i).tick();
         }
