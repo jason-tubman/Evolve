@@ -20,7 +20,7 @@ public class CreatureInstance extends Entity {
     private double foodAmount;
     private String type;
     private Boolean eggLayed = false;
-
+    private double anotherEgg;
 
     private double timeBorn;
 
@@ -42,7 +42,7 @@ public class CreatureInstance extends Entity {
         this.startingHealth = lifeTime;
         this.type = type;
         this.eggTime = eggTime; //How long it takes to lay an egg
-
+        this.anotherEgg = lifeTime;
 
         this.foodAmount = foodAmount; //How much food it's grabbed
         timeBorn = game.getSeconds();
@@ -109,7 +109,8 @@ public class CreatureInstance extends Entity {
             }
 
         }
-        if (foodAmount >= startingHealth) {
+        if (foodAmount >= anotherEgg) {
+            anotherEgg*=1.5;
             eggLayed = false;
         }
 
