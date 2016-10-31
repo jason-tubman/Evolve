@@ -9,8 +9,8 @@ public class foodInstance extends Entity {
     private Game game;
     private World world;
 
-    private double height = 5;
-    private double width = 5;
+    private double height;
+    private double width;
 
     private double maxSpeed = 0.025;
 
@@ -23,6 +23,8 @@ public class foodInstance extends Entity {
 
         this.world = game.getWorld();
         this.game = game;
+        this.height = height;
+        this.width = width;
 
         getDirection();
     }

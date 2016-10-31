@@ -22,18 +22,52 @@ public class GameState extends State{
     }
 
     public void createCreature() {
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 200; i++) {
+            generateFirstCreatures();
+        }
+        for (int i = 0; i < 100; i++) {
             float y = 50 + (int) (Math.random() * 768 - 100);
             float x = 51 + (int) (Math.random() * 1024 - 101);
-            creatureInstances.add(new CreatureInstance(this.game, "Herbivore", x, y, 20, 20, 1, 25, 5, 0, 0));
-            //game, type, x, y, width, height, speed, lifetime, eggtime, foodAmount
+            foodInstances.add(new foodInstance(this.game, x, y, 2, 2));
         }
-        for (int i = 0; i < 50; i++) {
-            float y = 50 + (int) (Math.random() * 768 - 100);
-            float x = 51 + (int) (Math.random() * 1024 - 101);
-            foodInstances.add(new foodInstance(this.game, x, y, 4, 4));
-            //game, type, x, y, width, height, speed, lifetime, eggtime, foodAmount
+    }
+
+    public void generateFirstCreatures() {
+
+        String newType;
+
+        double newY = 50 + (int) (Math.random() * 768 - 100);
+        double newX = 51 + (int) (Math.random() * 1024 - 101);
+        if (Math.random() < 0.05) {
+            newType = "Carnivore";
+        } else {
+            newType = "Herbivore";
         }
+        double newHeight  = 5 + Math.random() * 7;
+        double newWidth = newHeight;
+        double newMaxSpeed = 1;
+        while (Math.random() < 0.33) {
+            newMaxSpeed += 0.02;
+        }
+        //Calculate the new max health
+        double newHealth = 20;
+        while (Math.random() < 0.33) {
+            newHealth += 1;
+        }
+
+        //calculate the new eggTime
+        double newEggTime = 9;
+        while (Math.random() < 0.33) {
+            newEggTime -= 1;
+        }
+
+        double newfoodAmount = 2;
+        //Calculate the generation
+        int newGeneration = 1;
+        creatureInstances.add(new CreatureInstance(game, newType, newX, newY, newHeight, newWidth,
+                newMaxSpeed, newHealth, newEggTime, newfoodAmount, newGeneration));
+
+
     }
 
     public ArrayList<CreatureInstance> getCreatures() {
@@ -50,7 +84,7 @@ public class GameState extends State{
         if (foodInstances.size() < 50) {
             float y = 50 + (int) (Math.random() * 768 - 100);
             float x = 51 + (int) (Math.random() * 1024 - 101);
-            foodInstances.add(new foodInstance(this.game, x, y, 4, 4));
+            foodInstances.add(new foodInstance(this.game, x, y, 2, 2));
         }
 
     }

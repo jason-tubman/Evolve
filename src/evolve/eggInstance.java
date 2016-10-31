@@ -9,8 +9,8 @@ public class eggInstance extends Entity {
     private Game game;
     private World world;
     private int generation;
-    private double height = 3;
-    private double width = 3;
+    private double height = 4;
+    private double width = 4;
     private double creatureHeight;
     private double creatureWidth;
     private int timeLayed;
