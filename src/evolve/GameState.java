@@ -25,7 +25,7 @@ public class GameState extends State{
         for (int i = 0; i < 200; i++) {
             generateFirstCreatures();
         }
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 300; i++) {
             float y = 50 + (int) (Math.random() * 768 - 100);
             float x = 51 + (int) (Math.random() * 1024 - 101);
             foodInstances.add(new foodInstance(this.game, x, y, 2, 2));

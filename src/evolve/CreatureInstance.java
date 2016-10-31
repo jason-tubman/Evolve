@@ -21,6 +21,7 @@ public class CreatureInstance extends Entity {
     private String type;
     private Boolean eggLayed = false;
 
+
     private double timeBorn;
 
     double yDirection = 0;
@@ -62,16 +63,16 @@ public class CreatureInstance extends Entity {
     }
 
     public void findMove() {
-        if (y >= world.getWidth() - height+1) {
+        if (y >= world.getWidth() - height) {
             yDirection = -yDirection;
         }
-        if (x >= world.getHeight() - width+1) {
+        if (x >= world.getHeight() - width) {
             xDirection= -xDirection;
         }
-        if (y <= height+1) {
+        if (y <= height) {
             yDirection = -yDirection;
         }
-        if (x <= width+1) {
+        if (x <= width) {
             xDirection= -xDirection;
         }
         if (Math.random() > 0.99) {
@@ -100,10 +101,16 @@ public class CreatureInstance extends Entity {
     }
     public void checkEgg() {
         if ((this.game.getSeconds() - timeBorn) > eggTime && eggLayed == false) {
-            game.getGameState().getEggs().add(new eggInstance(game, this.type, this.x,
-                    this.y, this.height, this.width, (int)this.maxSpeed,
-                    (int)this.startingHealth, (int) this.eggTime, this.generation));
-            eggLayed = true;
+            if (Math.random() < 0.3) {
+                game.getGameState().getEggs().add(new eggInstance(game, this.type, this.x,
+                        this.y, this.height, this.width, (int) this.maxSpeed,
+                        (int) this.startingHealth, (int) this.eggTime, this.generation));
+                eggLayed = true;
+            }
+
+        }
+        if (foodAmount >= startingHealth) {
+            eggLayed = false;
         }
 
     }
