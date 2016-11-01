@@ -100,8 +100,8 @@ public class CreatureInstance extends Entity {
 
     }
     public void checkEgg() {
-        if ((this.game.getSeconds() - timeBorn) > eggTime && eggLayed == false) {
-            if (Math.random() < 0.3) {
+        if ((this.game.getSeconds() - timeBorn) > eggTime && eggLayed == false && health > ((int)startingHealth / 3)) {
+            if (Math.random() < 0.005) {
                 game.getGameState().getEggs().add(new eggInstance(game, this.type, this.x,
                         this.y, this.height, this.width, (int) this.maxSpeed,
                         (int) this.startingHealth, (int) this.eggTime, this.generation));
