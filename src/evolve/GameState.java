@@ -26,8 +26,8 @@ public class GameState extends State{
             generateFirstCreatures();
         }
         for (int i = 0; i < 300; i++) {
-            float y = 55 + (int) (Math.random() * 768);
-            float x = 0 + (int) (Math.random() * 1024);
+            float y = 55 + (int) (Math.random() * 750);
+            float x = 0 + (int) (Math.random() * 1000);
             foodInstances.add(new foodInstance(this.game, x, y, 2, 2));
         }
     }
@@ -36,8 +36,8 @@ public class GameState extends State{
 
         String newType;
 
-        double newY = 55 + (int) (Math.random() * 768);
-        double newX = 0 + (int) (Math.random() * 1024);
+        double newY = 63 + (int) (Math.random() * 750);
+        double newX = 8 + (int) (Math.random() * 1000);
         if (Math.random() < 0.05) {
             newType = "Carnivore";
         } else {

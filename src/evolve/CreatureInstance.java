@@ -69,10 +69,10 @@ public class CreatureInstance extends Entity {
         if (x >= world.getWidth() - width) {
             xDirection= -xDirection;
         }
-        if (y <= 50) {
+        if (y <= 50 + height) {
             yDirection = -yDirection;
         }
-        if (x <= 0) {
+        if (x <= 0 + width) {
             xDirection= -xDirection;
         }
         if (Math.random() > 0.99) {

@@ -37,8 +37,15 @@ public class eggInstance extends Entity {
         this.health = lifeTime;
         this.creatureHeight = height;
         this.creatureWidth = width;
-        this.width = width - (int) height/5;
-        this.height = height - (int)(width/5);
+        this.width = (int) width/2;
+        this.height = (int) height/2;
+
+        if (this.width == creatureWidth) {
+            this.width = 2;
+        } else if (this.height == creatureHeight) {
+            this.height = 2;
+        }
+
         this.type = type;
         this.eggTime = eggTime; //How long it takes to lay an egg
         this.timeLayed = game.getSeconds();
