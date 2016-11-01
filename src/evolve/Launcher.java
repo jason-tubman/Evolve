@@ -6,7 +6,7 @@ package evolve;
 public class Launcher {
 
     public static void main(String[] args) {
-        Game game = new Game("Canvas", 1024, 768);
+        Game game = new Game("EVOLVE - A Simple Evolution Simulator", 1024, 768);
         game.start();
     }
 

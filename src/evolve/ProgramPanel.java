@@ -12,7 +12,7 @@ public class ProgramPanel {
     private JFrame frame;
     private Canvas canvas;
 
-    private String title;
+    private String title = "EVOLVE";
     private int width, height;
 
     public ProgramPanel(String title, int width, int height) {
@@ -24,6 +24,7 @@ public class ProgramPanel {
 
     private void createPanel() {
         frame = new JFrame(title);
+        frame.setTitle(title);
         frame.setSize(width, height);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
