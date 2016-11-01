@@ -63,16 +63,16 @@ public class CreatureInstance extends Entity {
     }
 
     public void findMove() {
-        if (y >= world.getWidth() - height) {
+        if (y >= world.getHeight()- height) {
             yDirection = -yDirection;
         }
-        if (x >= world.getHeight() - width) {
+        if (x >= world.getWidth() - width) {
             xDirection= -xDirection;
         }
-        if (y <= height) {
+        if (y <= 50) {
             yDirection = -yDirection;
         }
-        if (x <= width) {
+        if (x <= 0) {
             xDirection= -xDirection;
         }
         if (Math.random() > 0.99) {
@@ -114,6 +114,9 @@ public class CreatureInstance extends Entity {
             eggLayed = false;
         }
 
+    }
+    public String getType() {
+        return this.type;
     }
 
 

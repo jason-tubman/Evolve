@@ -7,7 +7,7 @@ public class World {
     private int height;
     private int width;
     private Game game;
-    public World(Game game, int height, int width) {
+    public World(Game game, int width, int height) {
         this.height = height;
         this.width = width;
         this.game = game;

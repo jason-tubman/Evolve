@@ -39,16 +39,16 @@ public class foodInstance extends Entity {
     }
 
     public void findMove() {
-        if (y >= world.getWidth() - height+1) {
+        if (y >= world.getHeight()- height) {
             yDirection = -yDirection;
         }
-        if (x >= world.getHeight() - width+1) {
+        if (x >= world.getWidth() - width) {
             xDirection= -xDirection;
         }
-        if (y <= height+1) {
+        if (y <= 50) {
             yDirection = -yDirection;
         }
-        if (x <= width+1) {
+        if (x <= 0) {
             xDirection= -xDirection;
         }
         if (Math.random() > 0.999) {

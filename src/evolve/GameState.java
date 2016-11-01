@@ -26,8 +26,8 @@ public class GameState extends State{
             generateFirstCreatures();
         }
         for (int i = 0; i < 300; i++) {
-            float y = 50 + (int) (Math.random() * 768 - 100);
-            float x = 51 + (int) (Math.random() * 1024 - 101);
+            float y = 55 + (int) (Math.random() * 768);
+            float x = 0 + (int) (Math.random() * 1024);
             foodInstances.add(new foodInstance(this.game, x, y, 2, 2));
         }
     }
@@ -36,8 +36,8 @@ public class GameState extends State{
 
         String newType;
 
-        double newY = 50 + (int) (Math.random() * 768 - 100);
-        double newX = 51 + (int) (Math.random() * 1024 - 101);
+        double newY = 55 + (int) (Math.random() * 768);
+        double newX = 0 + (int) (Math.random() * 1024);
         if (Math.random() < 0.05) {
             newType = "Carnivore";
         } else {
@@ -166,6 +166,32 @@ public class GameState extends State{
 
     @Override
     public void render(Graphics g) {
+        g.setColor(new Color(108, 77, 93));
+        g.fillRect(0, 0, 1024, 50);
+        g.setColor(Color.LIGHT_GRAY);
+        g.setFont(new Font("Arial", Font.BOLD, 30));
+        g.drawString("EVOLVE ", 10, 38);
+        g.setFont(new Font("Arial", Font.BOLD, 15));
+        g.drawString("A simple evolution Simulator", 140, 35);
+        g.drawString("Food: ", 450, 35);
+        g.drawString(Integer.toString(getFoods().size()), 500, 35);
+        g.drawString("Herbivores: ", 550, 35);
+        int herbivores = 0;
+        int carnivores = 0;
+        for (int i = 0; i < getCreatures().size(); i++) {
+            if (getCreatures().get(i).getType() == "Herbivore") {
+                herbivores++;
+            } else {
+                carnivores++;
+            }
+
+        }
+        g.drawString(Integer.toString(herbivores), 645, 35);
+        g.drawString("Carnivores: ", 690, 35);
+        g.drawString(Integer.toString(carnivores), 790, 35);
+        g.drawString("Eggs: ", 825, 35);
+        g.drawString(Integer.toString(getEggs().size()), 885, 35);
+
         for (int i = 0; i < creatureInstances.size(); i++) {
             creatureInstances.get(i).render(g);
         }
