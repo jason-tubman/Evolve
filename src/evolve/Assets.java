@@ -14,7 +14,7 @@ public class Assets {
 
 
     public static void init() {
-
+        carnivoreSprite = imageLoader.loadImage("/resources/carnivore.png");
         herbivoreSprite = imageLoader.loadImage("/resources/Herbivore.png");
         foodSprite = imageLoader.loadImage("/resources/food.png");
         eggSprite = imageLoader.loadImage("/resources/egg.png");

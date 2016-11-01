@@ -89,7 +89,13 @@ public class CreatureInstance extends Entity {
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Assets.herbivoreSprite, (int)x, (int)y, (int)height, (int)width, null);
+        if (this.type == "Herbivore") {
+            g.drawImage(Assets.herbivoreSprite, (int)x, (int)y, (int)height, (int)width, null);
+        }
+        else {
+            g.drawImage(Assets.carnivoreSprite, (int)x, (int)y, (int)height, (int)width, null);
+        }
+
     }
 
     public double getLifeRemaining() {
