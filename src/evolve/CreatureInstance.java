@@ -53,6 +53,7 @@ public class CreatureInstance extends Entity {
 
     @Override
     public void tick() {
+        game.getGameState().clickedCreature();
         checkPickupFood();
         checkEatAnother();
         checkFoodDown();

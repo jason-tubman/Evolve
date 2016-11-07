@@ -84,6 +84,28 @@ public class GameState extends State{
         return eggInstances;
     }
 
+    public void clickedCreature(){
+        double mouseX = MouseInfo.getPointerInfo().getLocation().getX();
+        double mouseY = MouseInfo.getPointerInfo().getLocation().getY();
+        for (int i = 0; i < creatureInstances.size(); i++) {
+            double creatureWidth = creatureInstances.get(i).getWidth();
+            double creatureHeight = creatureInstances.get(i).getHeight();
+            double creatureX = creatureInstances.get(i).getX();
+            double creatureY = creatureInstances.get(i).getY();
+            if (game.getPanel().returnClicked() == 1) {
+                System.out.println("MOUSE WAS CLICKED at Mousex" + mouseX + "and at mouseY" + mouseY);
+                if (creatureAtLocation(mouseX, mouseY) != null) {
+                    System.out.println("CREATURE CLICKED WITH HEALTH: " + creatureInstances.get(i).getLifeRemaining());
+
+                }
+                game.getPanel().resetClicked();
+            }
+
+        }
+
+
+    }
+
     public foodInstance foodAtLocation(double x, double y) {
 
         for (int i = 0; i < foodInstances.size(); i++) {
@@ -104,10 +126,9 @@ public class GameState extends State{
             double creatureWidth = creatureInstances.get(i).getWidth();
             double creatureHeight = creatureInstances.get(i).getHeight();
             double creatureX = creatureInstances.get(i).getX();
-            double byeDupe;
             double creatureY = creatureInstances.get(i).getY();
-            if (((x <= creatureX + creatureWidth) && (x >= creatureX - creatureWidth)) &&
-                    ((y <= creatureY + creatureHeight) && (y >= creatureY - creatureHeight))) {
+            if ((x <= creatureX + creatureWidth) && (x >= creatureX - creatureWidth) &&
+                    (y <= creatureY + creatureHeight) && (y >= creatureY - creatureHeight)) {
                 return creatureInstances.get(i);
             }
         }
@@ -196,7 +217,7 @@ public class GameState extends State{
 
     @Override
     public void tick() {
-
+        clickedCreature();
         ticksPassed++;
         if (ticksPassed >= 3) {
             secondsPassed = 1;
@@ -206,9 +227,11 @@ public class GameState extends State{
         addNewFood();
         for (int i = 0; i < foodInstances.size(); i++) {
             foodInstances.get(i).tick();
+
         }
         for (int i = 0; i < creatureInstances.size(); i++) {
             creatureInstances.get(i).tick();
+
         }
 
     }

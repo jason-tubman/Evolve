@@ -2,17 +2,14 @@ package evolve;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
+import java.awt.event.*;
 
 
 /**
  * Created by Jason on 27/10/16.
  */
 public class ProgramPanel {
-
+    private int clicked = 0;
     private JFrame frame;
     private Canvas canvas;
 
@@ -55,6 +52,32 @@ public class ProgramPanel {
                     totalNotch -= notches;
                 }
                 camera.setZoomOffset(totalNotch);
+            }
+        });
+        canvas.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                clicked = 1;
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
             }
         });
         canvas.addKeyListener(new KeyListener() {
@@ -113,5 +136,13 @@ public class ProgramPanel {
     public Camera getCamera() {
         return camera;
     }
+
+    public int returnClicked() {
+        return clicked;
+    }
+    public void resetClicked() {
+        clicked = 0;
+    }
+
 
 }

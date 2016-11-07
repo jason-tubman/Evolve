@@ -14,8 +14,7 @@ public class Camera {
     }
 
     public void moveCamera(float xMove, float yMove) {
-        System.out.println("XOFFSET: " + xOffset);
-        System.out.println("zoomy woom" + -100*zoomfactor);
+
         if (xOffset + xMove > -1920/zoomfactor && xOffset + xMove < 0) {
             xOffset += xMove;
         }
