@@ -20,8 +20,10 @@ public class CreatureInstance extends Entity {
     private double foodAmount;
     private String type;
     private Boolean eggLayed = false;
+    private double digestionTime;
     private double anotherEgg;
-
+    private double livingSeconds = 0;
+    private int foodAdded = 0;
     private double timeBorn;
 
     double yDirection = 0;
@@ -29,13 +31,13 @@ public class CreatureInstance extends Entity {
 
     public CreatureInstance(Game game, String type, double x, double y, double height,
                             double width, double maxSpeed,
-                            double lifeTime, double eggTime, double foodAmount, int generation) {
+                            double lifeTime, double eggTime, double foodAmount, int generation, double foodTime) {
         super(game, x, y, height, width);
         this.maxSpeed =  maxSpeed; // How fast it can move
         this.generation = generation;
         this.height = height;
         this.width = width;
-
+        this.digestionTime = foodTime;
         this.world = game.getWorld();
         this.game = game;
         this.health = lifeTime;
@@ -51,6 +53,10 @@ public class CreatureInstance extends Entity {
 
     @Override
     public void tick() {
+        checkPickupFood();
+        checkEatAnother();
+        checkFoodDown();
+        checkStarvation();
         checkEgg();
         if (getLifeRemaining() <= 0) {
             killCreature();
@@ -58,12 +64,14 @@ public class CreatureInstance extends Entity {
         findMove();
     }
     public void makeMove(){
+        checkPickupFood();
+        checkEatAnother();
         y += yDirection;
         x += xDirection;
     }
 
     public void findMove() {
-        if (y >= world.getHeight()- height) {
+        if (y >= world.getHeight()- height - 30) {
             yDirection = -yDirection;
         }
         if (x >= world.getWidth() - width) {
@@ -78,7 +86,7 @@ public class CreatureInstance extends Entity {
         if (Math.random() > 0.99) {
             getDirection();
         }
-
+        checkPickupFood();
         makeMove();
     }
 
@@ -97,6 +105,89 @@ public class CreatureInstance extends Entity {
         }
 
     }
+    public void checkPickupFood() {
+        if (this.type.equals("Herbivore")) {
+            if (game.getGameState().foodAtLocation(this.x + this.width, this.y + this.height) != null) {
+                foodAmount++;
+                foodInstance food = game.getGameState().foodAtLocation(this.x + this.width, this.y + this.height);
+                game.getGameState().getFoods().remove(food);
+            } else if (game.getGameState().foodAtLocation(this.x - this.width, this.y - this.height) != null) {
+                foodAmount++;
+                foodInstance food = game.getGameState().foodAtLocation(this.x - this.width, this.y - this.height);
+                game.getGameState().getFoods().remove(food);
+            } else if (game.getGameState().foodAtLocation(this.x + this.width, this.y - this.height) != null) {
+                foodAmount++;
+                foodInstance food = game.getGameState().foodAtLocation(this.x + this.width, this.y - this.height);
+                game.getGameState().getFoods().remove(food);
+            } else if (game.getGameState().foodAtLocation(this.x - this.width, this.y + this.height) != null) {
+                foodAmount++;
+                foodInstance food = game.getGameState().foodAtLocation(this.x - this.width, this.y + this.height);
+                game.getGameState().getFoods().remove(food);
+            }
+        }
+    }
+    public void checkEatAnother() {
+        if (this.type.equals("Carnivore")) {
+            if (game.getGameState().creatureAtLocation(this.x + this.width, this.y + this.height) != null
+                    && game.getGameState().creatureAtLocation(this.x + this.width, this.y + this.height) != this) {
+                if (this.height >=
+                        game.getGameState().creatureAtLocation(this.x + this.width, this.y + this.height).height){
+                    foodAmount++;
+                    CreatureInstance creature = game.getGameState().creatureAtLocation(this.x + this.width, this.y + this.height);
+                    game.getGameState().getCreatures().remove(creature);
+                }
+            } else if (game.getGameState().creatureAtLocation(this.x - this.width, this.y - this.height) != null
+                    && game.getGameState().creatureAtLocation(this.x - this.width, this.y - this.height) != this) {
+                if (this.height >=
+                        game.getGameState().creatureAtLocation(this.x - this.width, this.y - this.height).height){
+                    foodAmount++;
+                    CreatureInstance creature = game.getGameState().creatureAtLocation(this.x + this.width, this.y + this.height);
+                    game.getGameState().getCreatures().remove(creature);
+                }
+            } else if (game.getGameState().creatureAtLocation(this.x - this.width, this.y + this.height) != null
+                    && game.getGameState().creatureAtLocation(this.x - this.width, this.y + this.height) != this) {
+                if (this.height >=
+                        game.getGameState().creatureAtLocation(this.x - this.width, this.y + this.height).height){
+                    foodAmount++;
+                    CreatureInstance creature = game.getGameState().creatureAtLocation(this.x - this.width, this.y + this.height);
+                    game.getGameState().getCreatures().remove(creature);
+                }
+            } else if (game.getGameState().creatureAtLocation(this.x + this.width, this.y - this.height) != null
+                    && game.getGameState().creatureAtLocation(this.x + this.width, this.y - this.height) != this) {
+                if (this.height >=
+                        game.getGameState().creatureAtLocation(this.x + this.width, this.y - this.height).height){
+                    foodAmount++;
+                    CreatureInstance creature = game.getGameState().creatureAtLocation(this.x + this.width, this.y - this.height);
+                    game.getGameState().getCreatures().remove(creature);
+                }
+            }
+        }
+    }
+
+    public void checkStarvation() {
+        if (this.foodAmount <= 0) {
+            killCreature();
+        }
+    }
+
+    public void checkFoodDown() {
+        double gameTime = 0;
+
+        if (foodAdded == 0) {
+            gameTime = this.game.getSeconds();
+        } else {
+            gameTime =  this.game.getSeconds() - (foodAdded * digestionTime);
+        }
+
+        livingSeconds = (gameTime - this.timeBorn);
+
+        if (livingSeconds >= digestionTime) {
+            foodAmount -= 1;
+            livingSeconds = 0;
+            foodAdded++;
+        }
+
+    }
 
     public double getLifeRemaining() {
         return (health - (this.game.getSeconds() - timeBorn));
@@ -110,7 +201,7 @@ public class CreatureInstance extends Entity {
             if (Math.random() < 0.005) {
                 game.getGameState().getEggs().add(new eggInstance(game, this.type, this.x,
                         this.y, this.height, this.width, (int) this.maxSpeed,
-                        (int) this.startingHealth, (int) this.eggTime, this.generation));
+                        (int) this.startingHealth, (int) this.eggTime, this.generation, this.digestionTime));
                 eggLayed = true;
             }
 
@@ -125,5 +216,16 @@ public class CreatureInstance extends Entity {
         return this.type;
     }
 
-
+    public double getX() {
+        return this.x;
+    }
+    public double getY() {
+        return this.y;
+    }
+    public double getWidth() {
+        return this.width;
+    }
+    public double getHeight() {
+        return this.height;
+    }
 }

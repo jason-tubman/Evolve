@@ -39,7 +39,7 @@ public class foodInstance extends Entity {
     }
 
     public void findMove() {
-        if (y >= world.getHeight()- height) {
+        if (y >= world.getHeight()- height -10) {
             yDirection = -yDirection;
         }
         if (x >= world.getWidth() - width) {
@@ -68,7 +68,18 @@ public class foodInstance extends Entity {
         g.drawImage(Assets.foodSprite, (int)x, (int)y, (int)height, (int)width, null);
     }
 
-
+    public double getX() {
+        return this.x;
+    }
+    public double getY() {
+        return this.y;
+    }
+    public double getWidth() {
+        return this.width;
+    }
+    public double getHeight() {
+        return this.height;
+    }
 
 
 

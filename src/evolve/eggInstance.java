@@ -15,7 +15,7 @@ public class eggInstance extends Entity {
 
     private double height;
     private double width;
-
+    private double digestionTime;
     private int timeLayed;
     private double maxSpeed;
     private double health;
@@ -27,10 +27,10 @@ public class eggInstance extends Entity {
 
     public eggInstance(Game game, String type, double x, double y, double height,
                        double width, double maxSpeed,
-                       double lifeTime, double eggTime, int generation) {
+                       double lifeTime, double eggTime, int generation, double foodTime) {
         super(game, x, y, height, width);
         this.maxSpeed =  maxSpeed; // How fast it can move
-
+        this.digestionTime = foodTime;
         this.world = game.getWorld();
         this.game = game;
         this.generation = generation;
@@ -93,6 +93,9 @@ public class eggInstance extends Entity {
     }
     public double getY() {
         return this.y;
+    }
+    public double getDigestionTime() {
+        return this.digestionTime;
     }
 
 

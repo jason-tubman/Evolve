@@ -23,7 +23,7 @@ public class Game  implements Runnable {
     private Thread thread;
 
     private boolean running = false;
-    private World world = new World(this, 1024, 768);
+    private World world = new World(this, 1920, 1080);
 
     //States
     private GameState gameState;

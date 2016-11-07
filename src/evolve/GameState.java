@@ -15,6 +15,9 @@ public class GameState extends State{
     private ArrayList<foodInstance> foodInstances = new ArrayList<>();
     private ArrayList<eggInstance> eggInstances = new ArrayList<>();
     private World world;
+    private int secondsPassed = 0;
+    private int ticksPassed = 0;
+
     public GameState(Game game, World world) {
         super(game);
         createCreature();
@@ -26,8 +29,8 @@ public class GameState extends State{
             generateFirstCreatures();
         }
         for (int i = 0; i < 300; i++) {
-            float y = 55 + (int) (Math.random() * 750);
-            float x = 0 + (int) (Math.random() * 1000);
+            float y = 63 + (int) (Math.random() * (this.game.getPanel().getCanvas().getHeight() - 50));
+            float x = 8 + (int) (Math.random() * (this.game.getPanel().getCanvas().getWidth() - 20));
             foodInstances.add(new foodInstance(this.game, x, y, 2, 2));
         }
     }
@@ -36,8 +39,8 @@ public class GameState extends State{
 
         String newType;
 
-        double newY = 63 + (int) (Math.random() * 750);
-        double newX = 8 + (int) (Math.random() * 1000);
+        double newY = 88 + (int) (Math.random() * (this.game.getPanel().getCanvas().getHeight() - 180));
+        double newX = 8 + (int) (Math.random() * (this.game.getPanel().getCanvas().getWidth() - 20));
         if (Math.random() < 0.05) {
             newType = "Carnivore";
         } else {
@@ -45,6 +48,7 @@ public class GameState extends State{
         }
         double newHeight  = 5 + Math.random() * 7;
         double newWidth = newHeight;
+        double foodTime = 10;
         double newMaxSpeed = 1;
         while (Math.random() < 0.33) {
             newMaxSpeed += 0.02;
@@ -65,7 +69,7 @@ public class GameState extends State{
         //Calculate the generation
         int newGeneration = 1;
         creatureInstances.add(new CreatureInstance(game, newType, newX, newY, newHeight, newWidth,
-                newMaxSpeed, newHealth, newEggTime, newfoodAmount, newGeneration));
+                newMaxSpeed, newHealth, newEggTime, newfoodAmount, newGeneration, foodTime));
 
 
     }
@@ -79,12 +83,45 @@ public class GameState extends State{
     public ArrayList<eggInstance> getEggs() {
         return eggInstances;
     }
+
+    public foodInstance foodAtLocation(double x, double y) {
+
+        for (int i = 0; i < foodInstances.size(); i++) {
+            double Width = foodInstances.get(i).getWidth();
+            double foodHeight = foodInstances.get(i).getHeight();
+            double foodX = foodInstances.get(i).getX();
+            double foodY = foodInstances.get(i).getY();
+            if (((x <=  foodX + Width) && (x >= foodX - Width))
+                    && ((y <= foodY + foodHeight) && (y >= foodY - foodHeight))) {
+                return foodInstances.get(i);
+            }
+        }
+        return null;
+    }
+
+    public CreatureInstance creatureAtLocation(double x, double y) {
+        for (int i = 0; i < creatureInstances.size(); i++) {
+            double creatureWidth = creatureInstances.get(i).getWidth();
+            double creatureHeight = creatureInstances.get(i).getHeight();
+            double creatureX = creatureInstances.get(i).getX();
+            double byeDupe;
+            double creatureY = creatureInstances.get(i).getY();
+            if (((x <= creatureX + creatureWidth) && (x >= creatureX - creatureWidth)) &&
+                    ((y <= creatureY + creatureHeight) && (y >= creatureY - creatureHeight))) {
+                return creatureInstances.get(i);
+            }
+        }
+        return null;
+    }
+
+
     public void addNewFood() {
 
-        if (foodInstances.size() < 300) {
-            float y = 50 + (int) (Math.random() * 768 - 100);
-            float x = 51 + (int) (Math.random() * 1024 - 101);
+        if (foodInstances.size() < 300 && secondsPassed >=1) {
+            float y = 50 + (int) (Math.random() * (this.game.getPanel().getCanvas().getHeight() - 100));
+            float x = 51 + (int) (Math.random() *  (this.game.getPanel().getCanvas().getWidth() - 50));
             foodInstances.add(new foodInstance(this.game, x, y, 2, 2));
+            secondsPassed = 0;
         }
 
     }
@@ -110,6 +147,11 @@ public class GameState extends State{
                 while (Math.random() < 0.33) {
                     newX++;
                     newY++;
+                }
+                //calc new foodTime
+                double newFoodTime = eggInstances.get(i).getDigestionTime();
+                while (Math.random() < 0.33) {
+                    newFoodTime += 0.15;
                 }
 
                 //Calculate the new height
@@ -146,7 +188,7 @@ public class GameState extends State{
                 eggInstances.remove(i);
                 //HATCH THE EGG
                 creatureInstances.add(new CreatureInstance(game, newType, newX, newY, newHeight, newWidth,
-                        newMaxSpeed, newHealth, newEggTime, newfoodAmount, newGeneration));
+                        newMaxSpeed, newHealth, newEggTime, newfoodAmount, newGeneration, newFoodTime));
 
             }
         }
@@ -154,7 +196,13 @@ public class GameState extends State{
 
     @Override
     public void tick() {
+        ticksPassed++;
+        if (ticksPassed >= 3) {
+            secondsPassed = 1;
+            ticksPassed = 0;
+        }
         hatchEgg();
+        addNewFood();
         for (int i = 0; i < foodInstances.size(); i++) {
             foodInstances.get(i).tick();
         }
@@ -167,7 +215,7 @@ public class GameState extends State{
     @Override
     public void render(Graphics g) {
         g.setColor(new Color(108, 77, 93));
-        g.fillRect(0, 0, 1024, 50);
+        g.fillRect(0, 0, this.game.getPanel().getCanvas().getWidth(), 50);
         g.setColor(Color.LIGHT_GRAY);
         g.setFont(new Font("Arial", Font.BOLD, 30));
         g.drawString("EVOLVE ", 10, 38);
@@ -204,4 +252,5 @@ public class GameState extends State{
 
 
     }
+
 }
