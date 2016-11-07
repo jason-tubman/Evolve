@@ -6,6 +6,7 @@ package evolve;
 public class Camera {
 
     private float  xOffset, yOffset;
+    private double zoomfactor = 1;
 
     public Camera(float xOffset, float yOffset) {
         this.xOffset = xOffset;
@@ -13,17 +14,32 @@ public class Camera {
     }
 
     public void moveCamera(float xMove, float yMove) {
-        xOffset += xMove;
-        yOffset += yMove;
+        System.out.println("XOFFSET: " + xOffset);
+        System.out.println("zoomy woom" + -100*zoomfactor);
+        if (xOffset + xMove > -1920/zoomfactor && xOffset + xMove < 0) {
+            xOffset += xMove;
+        }
+        if (yOffset + yMove < 0 && yOffset + yMove > -1080/zoomfactor) {
+            yOffset += yMove;
+        }
+
     }
 
+    public void setZoomOffset(int notches) {
+
+        zoomfactor = 1 + (notches * 0.05);
+
+    }
+    public double getZoom() {
+        return zoomfactor;
+    }
     public float getXoffset() {
         return xOffset;
     }
     public void setXoffset(float offset) {
         this.xOffset = offset;
     }
-    public float getyOffset() {
+    public float getYOffset() {
         return yOffset;
     }
     public void setYoffset(float offset) {

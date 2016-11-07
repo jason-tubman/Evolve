@@ -196,6 +196,7 @@ public class GameState extends State{
 
     @Override
     public void tick() {
+
         ticksPassed++;
         if (ticksPassed >= 3) {
             secondsPassed = 1;

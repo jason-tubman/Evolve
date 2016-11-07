@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.AffineTransform;
 import java.awt.image.BufferStrategy;
 
 /**
@@ -29,8 +30,6 @@ public class Game  implements Runnable {
     private GameState gameState;
     private State menuState;
 
-    //Camera
-    private Camera camera;
 
     public Game(String title, int width, int height) {
         this.width = width;
@@ -41,7 +40,7 @@ public class Game  implements Runnable {
     private void init(){
         this.panel = new ProgramPanel(title, this.width, this.height);
         Assets.init();
-        camera = new Camera(0, 0);
+
         gameState = new GameState(this, world);
         menuState = new MenuState(this);
         State.setState(gameState);
@@ -56,14 +55,16 @@ public class Game  implements Runnable {
         }
         g = bs.getDrawGraphics();
         g.clearRect(0, 0, width, height);
-
-
+        Graphics2D g2d = (Graphics2D)g;
+        g2d.scale(this.getPanel().getCamera().getZoom(), this.getPanel().getCamera().getZoom());
+        g2d.translate(this.getPanel().getCamera().getXoffset(), this.getPanel().getCamera().getYOffset());
         if (State.getState() != null) {
-            State.getState().render(g);
+            State.getState().render(g2d);
         }
 
         bs.show();
         g.dispose();
+        g2d.dispose();
 
     }
 
