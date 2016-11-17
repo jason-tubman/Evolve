@@ -1,9 +1,7 @@
 package evolve;
 
-import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 import java.util.*;
 
 /**
@@ -17,6 +15,7 @@ public class GameState extends State{
     private World world;
     private int secondsPassed = 0;
     private int ticksPassed = 0;
+    private Sidebar sidebar = new Sidebar(this.game, 0, 70, game.getPanel().getCanvas().getHeight() - 90, 250);
 
     public GameState(Game game, World world) {
         super(game);
@@ -30,7 +29,7 @@ public class GameState extends State{
         }
         for (int i = 0; i < 300; i++) {
             float y = 63 + (int) (Math.random() * (this.game.getPanel().getCanvas().getHeight() - 50));
-            float x = 8 + (int) (Math.random() * (this.game.getPanel().getCanvas().getWidth() - 20));
+            float x = 250 + (int) (Math.random() * (this.game.getPanel().getCanvas().getWidth() - 20));
             foodInstances.add(new foodInstance(this.game, x, y, 2, 2));
         }
     }
@@ -40,7 +39,7 @@ public class GameState extends State{
         String newType;
 
         double newY = 88 + (int) (Math.random() * (this.game.getPanel().getCanvas().getHeight() - 180));
-        double newX = 8 + (int) (Math.random() * (this.game.getPanel().getCanvas().getWidth() - 20));
+        double newX = 250 + (int) (Math.random() * (this.game.getPanel().getCanvas().getWidth() - 20));
         if (Math.random() < 0.05) {
             newType = "Carnivore";
         } else {
@@ -126,7 +125,7 @@ public class GameState extends State{
 
         if (foodInstances.size() < 300 && secondsPassed >=1) {
             float y = 50 + (int) (Math.random() * (this.game.getPanel().getCanvas().getHeight() - 100));
-            float x = 51 + (int) (Math.random() *  (this.game.getPanel().getCanvas().getWidth() - 50));
+            float x = 301 + (int) (Math.random() *  (this.game.getPanel().getCanvas().getWidth() - 50));
             foodInstances.add(new foodInstance(this.game, x, y, 2, 2));
             secondsPassed = 0;
         }
@@ -223,7 +222,8 @@ public class GameState extends State{
 
     @Override
     public void render(Graphics g) {
-        g.setColor(new Color(108, 77, 93));
+        sidebar.render(g);
+        g.setColor(new Color(48, 19, 11));
         g.fillRect(0, 0, this.game.getPanel().getCanvas().getWidth(), 50);
         g.setColor(Color.LIGHT_GRAY);
         g.setFont(new Font("Arial", Font.BOLD, 30));

@@ -80,7 +80,7 @@ public class CreatureInstance extends Entity {
         if (y <= 50 + height) {
             yDirection = -yDirection;
         }
-        if (x <= 0 + width) {
+        if (x <= 250 + width) {
             xDirection= -xDirection;
         }
         if (Math.random() > 0.99) {
