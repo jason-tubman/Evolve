@@ -53,7 +53,6 @@ public class CreatureInstance extends Entity {
 
     @Override
     public void tick() {
-        game.getGameState().clickedCreature();
         checkPickupFood();
         checkEatAnother();
         checkFoodDown();
@@ -108,59 +107,27 @@ public class CreatureInstance extends Entity {
     }
     public void checkPickupFood() {
         if (this.type.equals("Herbivore")) {
-            if (game.getGameState().foodAtLocation(this.x + this.width, this.y + this.height) != null) {
+
+            if (game.getGameState().foodAtLocation(this.x, this.y, this.height, this.width) != null) {
                 foodAmount++;
-                foodInstance food = game.getGameState().foodAtLocation(this.x + this.width, this.y + this.height);
-                game.getGameState().getFoods().remove(food);
-            } else if (game.getGameState().foodAtLocation(this.x - this.width, this.y - this.height) != null) {
-                foodAmount++;
-                foodInstance food = game.getGameState().foodAtLocation(this.x - this.width, this.y - this.height);
-                game.getGameState().getFoods().remove(food);
-            } else if (game.getGameState().foodAtLocation(this.x + this.width, this.y - this.height) != null) {
-                foodAmount++;
-                foodInstance food = game.getGameState().foodAtLocation(this.x + this.width, this.y - this.height);
-                game.getGameState().getFoods().remove(food);
-            } else if (game.getGameState().foodAtLocation(this.x - this.width, this.y + this.height) != null) {
-                foodAmount++;
-                foodInstance food = game.getGameState().foodAtLocation(this.x - this.width, this.y + this.height);
+                foodInstance food = game.getGameState().foodAtLocation(this.x , this.y, this.height, this.width);
                 game.getGameState().getFoods().remove(food);
             }
+
         }
     }
     public void checkEatAnother() {
         if (this.type.equals("Carnivore")) {
-            if (game.getGameState().creatureAtLocation(this.x + this.width, this.y + this.height) != null
-                    && game.getGameState().creatureAtLocation(this.x + this.width, this.y + this.height) != this) {
+            if (game.getGameState().creatureAtLocation(this.x, this.y, this.height, this.width) != null) {
                 if (this.height >=
-                        game.getGameState().creatureAtLocation(this.x + this.width, this.y + this.height).height){
-                    foodAmount++;
-                    CreatureInstance creature = game.getGameState().creatureAtLocation(this.x + this.width, this.y + this.height);
-                    game.getGameState().getCreatures().remove(creature);
+                        game.getGameState().creatureAtLocation(this.x, this.y, this.height, this.width).height) {
+                    CreatureInstance creature = game.getGameState().creatureAtLocation(this.x , this.y, this.height, this.width);
+                    if (!creature.equals(this)) {
+                        foodAmount++;
+                        game.getGameState().getCreatures().remove(creature);
+                    }
                 }
-            } else if (game.getGameState().creatureAtLocation(this.x - this.width, this.y - this.height) != null
-                    && game.getGameState().creatureAtLocation(this.x - this.width, this.y - this.height) != this) {
-                if (this.height >=
-                        game.getGameState().creatureAtLocation(this.x - this.width, this.y - this.height).height){
-                    foodAmount++;
-                    CreatureInstance creature = game.getGameState().creatureAtLocation(this.x + this.width, this.y + this.height);
-                    game.getGameState().getCreatures().remove(creature);
-                }
-            } else if (game.getGameState().creatureAtLocation(this.x - this.width, this.y + this.height) != null
-                    && game.getGameState().creatureAtLocation(this.x - this.width, this.y + this.height) != this) {
-                if (this.height >=
-                        game.getGameState().creatureAtLocation(this.x - this.width, this.y + this.height).height){
-                    foodAmount++;
-                    CreatureInstance creature = game.getGameState().creatureAtLocation(this.x - this.width, this.y + this.height);
-                    game.getGameState().getCreatures().remove(creature);
-                }
-            } else if (game.getGameState().creatureAtLocation(this.x + this.width, this.y - this.height) != null
-                    && game.getGameState().creatureAtLocation(this.x + this.width, this.y - this.height) != this) {
-                if (this.height >=
-                        game.getGameState().creatureAtLocation(this.x + this.width, this.y - this.height).height){
-                    foodAmount++;
-                    CreatureInstance creature = game.getGameState().creatureAtLocation(this.x + this.width, this.y - this.height);
-                    game.getGameState().getCreatures().remove(creature);
-                }
+
             }
         }
     }

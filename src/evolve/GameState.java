@@ -84,56 +84,42 @@ public class GameState extends State{
         return eggInstances;
     }
 
-    public void clickedCreature(){
-        double mouseX = MouseInfo.getPointerInfo().getLocation().getX();
-        double mouseY = MouseInfo.getPointerInfo().getLocation().getY();
-        for (int i = 0; i < creatureInstances.size(); i++) {
-            double creatureWidth = creatureInstances.get(i).getWidth();
-            double creatureHeight = creatureInstances.get(i).getHeight();
-            double creatureX = creatureInstances.get(i).getX();
-            double creatureY = creatureInstances.get(i).getY();
-            if (game.getPanel().returnClicked() == 1) {
-                System.out.println("MOUSE WAS CLICKED at Mousex" + mouseX + "and at mouseY" + mouseY);
-                if (creatureAtLocation(mouseX, mouseY) != null) {
-                    System.out.println("CREATURE CLICKED WITH HEALTH: " + creatureInstances.get(i).getLifeRemaining());
 
-                }
-                game.getPanel().resetClicked();
-            }
-
-        }
-
-
-    }
-
-    public foodInstance foodAtLocation(double x, double y) {
+    public foodInstance foodAtLocation(double x, double y, double h, double w) {
 
         for (int i = 0; i < foodInstances.size(); i++) {
             double Width = foodInstances.get(i).getWidth();
             double foodHeight = foodInstances.get(i).getHeight();
             double foodX = foodInstances.get(i).getX();
             double foodY = foodInstances.get(i).getY();
-            if (((x <=  foodX + Width) && (x >= foodX - Width))
-                    && ((y <= foodY + foodHeight) && (y >= foodY - foodHeight))) {
+            if (x < foodX + Width &&
+                    x + w > foodX &&
+                    y < foodY + foodHeight &&
+                    h + y > foodY) {
+                // collision detected!
                 return foodInstances.get(i);
             }
         }
         return null;
     }
 
-    public CreatureInstance creatureAtLocation(double x, double y) {
+    public CreatureInstance creatureAtLocation(double x, double y, double h, double w) {
         for (int i = 0; i < creatureInstances.size(); i++) {
             double creatureWidth = creatureInstances.get(i).getWidth();
             double creatureHeight = creatureInstances.get(i).getHeight();
             double creatureX = creatureInstances.get(i).getX();
             double creatureY = creatureInstances.get(i).getY();
-            if ((x <= creatureX + creatureWidth) && (x >= creatureX - creatureWidth) &&
-                    (y <= creatureY + creatureHeight) && (y >= creatureY - creatureHeight)) {
+            int bye;
+            if (x < creatureX + creatureWidth &&
+                    x + w > creatureX &&
+                    y < creatureY + creatureHeight &&
+                    h + y > creatureY) {
+                // collision detected!
                 return creatureInstances.get(i);
             }
         }
-        return null;
-    }
+            return null;
+        }
 
 
     public void addNewFood() {
@@ -217,7 +203,6 @@ public class GameState extends State{
 
     @Override
     public void tick() {
-        clickedCreature();
         ticksPassed++;
         if (ticksPassed >= 3) {
             secondsPassed = 1;
