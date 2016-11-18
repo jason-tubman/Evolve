@@ -41,7 +41,7 @@ public class GameState extends State{
 
         double newY = 88 + (int) (Math.random() * (this.game.getPanel().getCanvas().getHeight() - 180));
         double newX = 300 + (int) (Math.random() * (this.game.getPanel().getCanvas().getWidth() - 20));
-        if (Math.random() < 0.05) {
+        if (Math.random() < 0.005) {
             newType = "Carnivore";
         } else {
             newType = "Herbivore";
@@ -65,7 +65,7 @@ public class GameState extends State{
             newEggTime -= 1;
         }
 
-        double newfoodAmount = 2;
+        double newfoodAmount = 5;
         //Calculate the generation
         int newGeneration = 1;
         creatureInstances.add(new CreatureInstance(game, newType, newX, newY, newHeight, newWidth,
