@@ -48,7 +48,7 @@ public class foodInstance extends Entity {
         if (y <= 50) {
             yDirection = -yDirection;
         }
-        if (250 <= 0) {
+        if (x <= 250) {
             xDirection= -xDirection;
         }
         if (Math.random() > 0.999) {

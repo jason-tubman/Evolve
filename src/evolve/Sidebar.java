@@ -123,7 +123,7 @@ public class Sidebar extends Entity{
                 creaturesAdded++;
             }
         } catch (IndexOutOfBoundsException e) {
-            
+
         }
     }
 }

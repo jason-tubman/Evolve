@@ -17,6 +17,7 @@ public class GameState extends State{
     private int ticksPassed = 0;
     private Sidebar sidebar = new Sidebar(this.game, 0, 70, game.getPanel().getCanvas().getHeight() - 90, 250);
 
+
     public GameState(Game game, World world) {
         super(game);
         createCreature();
@@ -27,7 +28,7 @@ public class GameState extends State{
         for (int i = 0; i < 200; i++) {
             generateFirstCreatures();
         }
-        for (int i = 0; i < 300; i++) {
+        for (int i = 0; i < 600; i++) {
             float y = 63 + (int) (Math.random() * (this.game.getPanel().getCanvas().getHeight() - 50));
             float x = 260 + (int) (Math.random() * (this.game.getPanel().getCanvas().getWidth() - 20));
             foodInstances.add(new foodInstance(this.game, x, y, 2, 2));
@@ -47,19 +48,19 @@ public class GameState extends State{
         }
         double newHeight  = 5 + Math.random() * 7;
         double newWidth = newHeight;
-        double foodTime = 10;
+        double foodTime = 20;
         double newMaxSpeed = 1;
         while (Math.random() < 0.33) {
             newMaxSpeed += 0.02;
         }
         //Calculate the new max health
-        double newHealth = 20;
+        double newHealth = 60;
         while (Math.random() < 0.33) {
             newHealth += 1;
         }
 
         //calculate the new eggTime
-        double newEggTime = 9;
+        double newEggTime = 32;
         while (Math.random() < 0.33) {
             newEggTime -= 1;
         }
@@ -122,8 +123,7 @@ public class GameState extends State{
 
 
     public void addNewFood() {
-
-        if (foodInstances.size() < 300 && secondsPassed >=1) {
+        if (foodInstances.size() < 600 && secondsPassed >=0.5) {
             float y = 50 + (int) (Math.random() * (this.game.getPanel().getCanvas().getHeight() - 100));
             float x = 301 + (int) (Math.random() *  (this.game.getPanel().getCanvas().getWidth() - 50));
             foodInstances.add(new foodInstance(this.game, x, y, 2, 2));
@@ -134,7 +134,7 @@ public class GameState extends State{
 
     public void hatchEgg() {
         for (int i = 0; i < eggInstances.size(); i++) {
-            if (game.getSeconds() - eggInstances.get(i).getTimeLayed() >= 15) {
+            if (game.getSeconds() - eggInstances.get(i).getTimeLayed() >= 25) {
                 //Calculate the new type
                 //Calculate the new x
                 //calculate the new y
