@@ -3,6 +3,7 @@ package evolve;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Vector;
 
 
 /**
@@ -12,7 +13,7 @@ public class ProgramPanel {
     private int clicked = 0;
     private JFrame frame;
     private Canvas canvas;
-
+    private JComboBox box;
     //Camera
     private Camera camera;
 
@@ -25,6 +26,17 @@ public class ProgramPanel {
         this.width = width;
         this.height = height;
         camera = new Camera(0, 0);
+
+        Vector stats = new Vector();
+
+        stats.addElement("Speed");
+        stats.addElement("Generation");
+        stats.addElement("Size");
+        stats.addElement("Digestion Time");
+        stats.addElement("lifeTime");
+        stats.addElement("Egg Time");
+        this.box = new JComboBox(stats);
+
         createPanel();
     }
 
@@ -120,7 +132,13 @@ public class ProgramPanel {
 
             }
         });
+
+        frame.getContentPane().add(this.box);
+
         frame.add(canvas);
+
+        this.box.setVisible(true);
+        this.box.setBounds(15, 115, 220, 30);
         frame.pack();
 
     }
@@ -143,6 +161,8 @@ public class ProgramPanel {
     public void resetClicked() {
         clicked = 0;
     }
-
+    public String getBoxValue() {
+        return this.box.getSelectedItem().toString();
+    }
 
 }

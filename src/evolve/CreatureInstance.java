@@ -131,6 +131,14 @@ public class CreatureInstance extends Entity {
             }
         }
     }
+    public void renderSide(Graphics g, int x, int y, int height, int width) {
+        if (this.getType() == "Herbivore") {
+            g.drawImage(Assets.herbivoreSprite, x, y, height, width, null);
+        }
+        else {
+            g.drawImage(Assets.carnivoreSprite, x, y, height, width, null);
+        }
+    }
 
     public void checkStarvation() {
         if (this.foodAmount <= 0) {
@@ -195,5 +203,20 @@ public class CreatureInstance extends Entity {
     }
     public double getHeight() {
         return this.height;
+    }
+    public double getMaxSpeed() {
+        return this.maxSpeed;
+    }
+    public int getGeneration() {
+        return this.generation;
+    }
+    public double getDigestionTime() {
+        return this.digestionTime;
+    }
+    public double getLifeTime() {
+        return this.startingHealth;
+    }
+    public double getEggTime() {
+        return eggTime;
     }
 }

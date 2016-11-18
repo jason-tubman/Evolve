@@ -29,7 +29,7 @@ public class GameState extends State{
         }
         for (int i = 0; i < 300; i++) {
             float y = 63 + (int) (Math.random() * (this.game.getPanel().getCanvas().getHeight() - 50));
-            float x = 250 + (int) (Math.random() * (this.game.getPanel().getCanvas().getWidth() - 20));
+            float x = 260 + (int) (Math.random() * (this.game.getPanel().getCanvas().getWidth() - 20));
             foodInstances.add(new foodInstance(this.game, x, y, 2, 2));
         }
     }
@@ -39,7 +39,7 @@ public class GameState extends State{
         String newType;
 
         double newY = 88 + (int) (Math.random() * (this.game.getPanel().getCanvas().getHeight() - 180));
-        double newX = 250 + (int) (Math.random() * (this.game.getPanel().getCanvas().getWidth() - 20));
+        double newX = 300 + (int) (Math.random() * (this.game.getPanel().getCanvas().getWidth() - 20));
         if (Math.random() < 0.05) {
             newType = "Carnivore";
         } else {
@@ -202,6 +202,7 @@ public class GameState extends State{
 
     @Override
     public void tick() {
+        sidebar.tick();
         ticksPassed++;
         if (ticksPassed >= 3) {
             secondsPassed = 1;
