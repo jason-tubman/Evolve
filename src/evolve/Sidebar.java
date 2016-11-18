@@ -117,9 +117,15 @@ public class Sidebar extends Entity{
 
         int creaturesAdded = 0;
         try {
-            for (int i = game.getGameState().getCreatures().size() - 1; i > game.getGameState().getCreatures().size() - 1 - 27; i--) {
+            for (int i = game.getGameState().getCreatures().size() - 1; i > game.getGameState().getCreatures().size() - 1 - 21; i--) {
                 CreatureInstance creature = game.getGameState().getCreatures().get(i);
-                creature.renderSide(g, 20 + 30 * (creaturesAdded % 3), 160 + 30 * (creaturesAdded / 3), (int) creature.getHeight(), (int) creature.getWidth());
+
+                double size;
+
+                size = 40 - (100*(Math.pow(1.3, -creature.getWidth())));
+
+                creature.renderSide(g, 35 + 80 * (creaturesAdded % 3) - (int)size/3, 205 + 55 * (creaturesAdded / 3) - (int)size,
+                        (int) size, (int) size);
                 creaturesAdded++;
             }
         } catch (IndexOutOfBoundsException e) {
