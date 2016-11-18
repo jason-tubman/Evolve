@@ -31,7 +31,7 @@ public class CreatureInstance extends Entity {
 
     public CreatureInstance(Game game, String type, double x, double y, double height,
                             double width, double maxSpeed,
-                            double lifeTime, double eggTime, double foodAmount, int generation, double foodTime) {
+                            double lifeTime, double eggTime, double foodAmount, int generation, double foodTime, double anotherEgg) {
         super(game, x, y, height, width);
         this.maxSpeed =  maxSpeed; // How fast it can move
         this.generation = generation;
@@ -44,7 +44,7 @@ public class CreatureInstance extends Entity {
         this.startingHealth = lifeTime;
         this.type = type;
         this.eggTime = eggTime; //How long it takes to lay an egg
-        this.anotherEgg = lifeTime;
+        this.anotherEgg = anotherEgg;
 
         this.foodAmount = foodAmount; //How much food it's grabbed
         timeBorn = game.getSeconds();

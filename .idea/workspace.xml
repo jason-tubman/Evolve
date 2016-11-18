@@ -6,6 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fc00a94-2d97-4707-8b30-3f8ab6332c02" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/evolve/CreatureInstance.java" afterPath="$PROJECT_DIR$/src/evolve/CreatureInstance.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/evolve/GameState.java" afterPath="$PROJECT_DIR$/src/evolve/GameState.java" />
     </list>
     <ignored path="Evolve.iws" />
@@ -31,13 +33,12 @@
       <file leaf-file-name="CreatureInstance.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/evolve/CreatureInstance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="134" column="16" selection-start-line="134" selection-start-column="16" selection-end-line="134" selection-end-column="16" />
+            <state relative-caret-position="139">
+              <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
               <folding>
                 <element signature="method#makeMove#0;class#CreatureInstance#0" expanded="false" />
                 <element signature="method#checkStarvation#0;class#CreatureInstance#0" expanded="false" />
                 <element signature="method#checkFoodDown#0;class#CreatureInstance#0" expanded="false" />
-                <element signature="method#checkEgg#0;class#CreatureInstance#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -46,7 +47,7 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/evolve/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-227">
+            <state relative-caret-position="238">
               <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
               <folding>
                 <element signature="method#Game#0;class#Game#0" expanded="false" />
@@ -65,8 +66,8 @@
       <file leaf-file-name="GameState.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/evolve/GameState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+            <state relative-caret-position="255">
+              <caret line="192" column="38" selection-start-line="192" selection-start-column="38" selection-end-line="192" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -87,7 +88,7 @@
       <file leaf-file-name="Sidebar.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/evolve/Sidebar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
+            <state relative-caret-position="1972">
               <caret line="120" column="65" selection-start-line="120" selection-start-column="65" selection-end-line="120" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -127,9 +128,9 @@
         <option value="$PROJECT_DIR$/src/evolve/Camera.java" />
         <option value="$PROJECT_DIR$/src/evolve/Game.java" />
         <option value="$PROJECT_DIR$/src/evolve/ProgramPanel.java" />
-        <option value="$PROJECT_DIR$/src/evolve/CreatureInstance.java" />
         <option value="$PROJECT_DIR$/src/evolve/Sidebar.java" />
         <option value="$PROJECT_DIR$/src/evolve/foodInstance.java" />
+        <option value="$PROJECT_DIR$/src/evolve/CreatureInstance.java" />
         <option value="$PROJECT_DIR$/src/evolve/GameState.java" />
       </list>
     </option>
@@ -712,12 +713,13 @@
       <workItem from="1477962200796" duration="790000" />
       <workItem from="1477995546311" duration="59000" />
       <workItem from="1478470956748" duration="11647000" />
-      <workItem from="1479417812491" duration="12340000" />
+      <workItem from="1479417812491" duration="12371000" />
+      <workItem from="1479497968042" duration="1307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52284000" />
+    <option name="totallyTimeSpent" value="53622000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="283" y="51" width="1387" height="1003" extended-state="0" />
@@ -731,7 +733,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37737963" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37737963" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -799,6 +801,51 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/evolve/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+          <folding>
+            <element signature="method#Game#0;class#Game#0" expanded="false" />
+            <element signature="method#init#0;class#Game#0" expanded="false" />
+            <element signature="method#render#0;class#Game#0" expanded="false" />
+            <element signature="method#tick#0;class#Game#0" expanded="false" />
+            <element signature="method#run#0;class#Game#0" expanded="false" />
+            <element signature="method#start#0;class#Game#0" expanded="false" />
+            <element signature="method#stop#0;class#Game#0" expanded="false" />
+            <element signature="method#getSeconds#0;class#Game#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/evolve/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/evolve/foodInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/evolve/Sidebar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1972">
+          <caret line="120" column="65" selection-start-line="120" selection-start-column="65" selection-end-line="120" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/evolve/CreatureInstance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="935">
@@ -807,7 +854,6 @@
             <element signature="method#makeMove#0;class#CreatureInstance#0" expanded="false" />
             <element signature="method#checkStarvation#0;class#CreatureInstance#0" expanded="false" />
             <element signature="method#checkFoodDown#0;class#CreatureInstance#0" expanded="false" />
-            <element signature="method#checkEgg#0;class#CreatureInstance#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -830,7 +876,6 @@
             <element signature="method#makeMove#0;class#CreatureInstance#0" expanded="false" />
             <element signature="method#checkStarvation#0;class#CreatureInstance#0" expanded="false" />
             <element signature="method#checkFoodDown#0;class#CreatureInstance#0" expanded="false" />
-            <element signature="method#checkEgg#0;class#CreatureInstance#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -841,18 +886,9 @@
           <caret line="12" column="18" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1572:1984" expanded="false" />
-            <element signature="e#2297#2298#0" expanded="false" />
-            <element signature="e#2340#2341#0" expanded="false" />
             <element signature="class#2569:4022" expanded="false" />
             <element signature="method#keyTyped#0;class#2569:4022" expanded="false" />
             <element signature="method#keyPressed#0;class#2569:4022" expanded="false" />
-            <element signature="e#4364#4365#0" expanded="true" />
-            <element signature="e#4393#4394#0" expanded="true" />
-            <element signature="e#4427#4428#0" expanded="true" />
-            <element signature="e#4457#4458#0" expanded="true" />
-            <element signature="e#4490#4491#0" expanded="true" />
-            <element signature="e#4517#4518#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -879,16 +915,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-          <folding>
-            <element signature="e#1551#1552#0" expanded="true" />
-            <element signature="e#1580#1581#0" expanded="true" />
-            <element signature="e#1607#1608#0" expanded="true" />
-            <element signature="e#1636#1637#0" expanded="true" />
-            <element signature="e#1667#1668#0" expanded="true" />
-            <element signature="e#1700#1701#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -896,7 +923,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
-          <folding />
+          <folding>
+            <element signature="e#2428#2429#0" expanded="true" />
+            <element signature="e#2469#2470#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -908,7 +938,6 @@
             <element signature="method#makeMove#0;class#CreatureInstance#0" expanded="false" />
             <element signature="method#checkStarvation#0;class#CreatureInstance#0" expanded="false" />
             <element signature="method#checkFoodDown#0;class#CreatureInstance#0" expanded="false" />
-            <element signature="method#checkEgg#0;class#CreatureInstance#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -919,18 +948,9 @@
           <caret line="12" column="18" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1572:1984" expanded="false" />
-            <element signature="e#2297#2298#0" expanded="false" />
-            <element signature="e#2340#2341#0" expanded="false" />
             <element signature="class#2569:4022" expanded="false" />
             <element signature="method#keyTyped#0;class#2569:4022" expanded="false" />
             <element signature="method#keyPressed#0;class#2569:4022" expanded="false" />
-            <element signature="e#4364#4365#0" expanded="true" />
-            <element signature="e#4393#4394#0" expanded="true" />
-            <element signature="e#4427#4428#0" expanded="true" />
-            <element signature="e#4457#4458#0" expanded="true" />
-            <element signature="e#4490#4491#0" expanded="true" />
-            <element signature="e#4517#4518#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -957,16 +977,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-          <folding>
-            <element signature="e#1551#1552#0" expanded="true" />
-            <element signature="e#1580#1581#0" expanded="true" />
-            <element signature="e#1607#1608#0" expanded="true" />
-            <element signature="e#1636#1637#0" expanded="true" />
-            <element signature="e#1667#1668#0" expanded="true" />
-            <element signature="e#1700#1701#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -974,7 +985,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
-          <folding />
+          <folding>
+            <element signature="e#2428#2429#0" expanded="true" />
+            <element signature="e#2469#2470#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -986,7 +1000,6 @@
             <element signature="method#makeMove#0;class#CreatureInstance#0" expanded="false" />
             <element signature="method#checkStarvation#0;class#CreatureInstance#0" expanded="false" />
             <element signature="method#checkFoodDown#0;class#CreatureInstance#0" expanded="false" />
-            <element signature="method#checkEgg#0;class#CreatureInstance#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1005,16 +1018,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-          <folding>
-            <element signature="e#1551#1552#0" expanded="true" />
-            <element signature="e#1580#1581#0" expanded="true" />
-            <element signature="e#1607#1608#0" expanded="true" />
-            <element signature="e#1636#1637#0" expanded="true" />
-            <element signature="e#1667#1668#0" expanded="true" />
-            <element signature="e#1700#1701#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1022,7 +1026,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
-          <folding />
+          <folding>
+            <element signature="e#2428#2429#0" expanded="true" />
+            <element signature="e#2469#2470#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1034,7 +1041,6 @@
             <element signature="method#makeMove#0;class#CreatureInstance#0" expanded="false" />
             <element signature="method#checkStarvation#0;class#CreatureInstance#0" expanded="false" />
             <element signature="method#checkFoodDown#0;class#CreatureInstance#0" expanded="false" />
-            <element signature="method#checkEgg#0;class#CreatureInstance#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1053,7 +1059,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="e#2428#2429#0" expanded="true" />
+            <element signature="e#2469#2470#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1065,7 +1074,6 @@
             <element signature="method#makeMove#0;class#CreatureInstance#0" expanded="false" />
             <element signature="method#checkStarvation#0;class#CreatureInstance#0" expanded="false" />
             <element signature="method#checkFoodDown#0;class#CreatureInstance#0" expanded="false" />
-            <element signature="method#checkEgg#0;class#CreatureInstance#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1075,7 +1083,11 @@
         <state relative-caret-position="2329">
           <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
           <folding>
+            <element signature="method#Game#0;class#Game#0" expanded="false" />
+            <element signature="method#init#0;class#Game#0" expanded="false" />
+            <element signature="method#render#0;class#Game#0" expanded="false" />
             <element signature="method#tick#0;class#Game#0" expanded="false" />
+            <element signature="method#run#0;class#Game#0" expanded="false" />
             <element signature="method#start#0;class#Game#0" expanded="false" />
             <element signature="method#stop#0;class#Game#0" expanded="false" />
             <element signature="method#getSeconds#0;class#Game#0" expanded="false" />
@@ -1101,7 +1113,6 @@
             <element signature="method#makeMove#0;class#CreatureInstance#0" expanded="false" />
             <element signature="method#checkStarvation#0;class#CreatureInstance#0" expanded="false" />
             <element signature="method#checkFoodDown#0;class#CreatureInstance#0" expanded="false" />
-            <element signature="method#checkEgg#0;class#CreatureInstance#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1111,7 +1122,11 @@
         <state relative-caret-position="714">
           <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
           <folding>
+            <element signature="method#Game#0;class#Game#0" expanded="false" />
+            <element signature="method#init#0;class#Game#0" expanded="false" />
+            <element signature="method#render#0;class#Game#0" expanded="false" />
             <element signature="method#tick#0;class#Game#0" expanded="false" />
+            <element signature="method#run#0;class#Game#0" expanded="false" />
             <element signature="method#start#0;class#Game#0" expanded="false" />
             <element signature="method#stop#0;class#Game#0" expanded="false" />
             <element signature="method#getSeconds#0;class#Game#0" expanded="false" />
@@ -1125,18 +1140,9 @@
           <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1572:1984" expanded="false" />
-            <element signature="e#2297#2298#0" expanded="false" />
-            <element signature="e#2340#2341#0" expanded="false" />
             <element signature="class#2569:4022" expanded="false" />
             <element signature="method#keyTyped#0;class#2569:4022" expanded="false" />
             <element signature="method#keyPressed#0;class#2569:4022" expanded="false" />
-            <element signature="e#4364#4365#0" expanded="true" />
-            <element signature="e#4393#4394#0" expanded="true" />
-            <element signature="e#4427#4428#0" expanded="true" />
-            <element signature="e#4457#4458#0" expanded="true" />
-            <element signature="e#4490#4491#0" expanded="true" />
-            <element signature="e#4517#4518#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1181,7 +1187,6 @@
             <element signature="method#makeMove#0;class#CreatureInstance#0" expanded="false" />
             <element signature="method#checkStarvation#0;class#CreatureInstance#0" expanded="false" />
             <element signature="method#checkFoodDown#0;class#CreatureInstance#0" expanded="false" />
-            <element signature="method#checkEgg#0;class#CreatureInstance#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1260,7 +1265,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/evolve/Sidebar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
+        <state relative-caret-position="1972">
           <caret line="120" column="65" selection-start-line="120" selection-start-column="65" selection-end-line="120" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1279,30 +1284,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/evolve/CreatureInstance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="134" column="16" selection-start-line="134" selection-start-column="16" selection-end-line="134" selection-end-column="16" />
-          <folding>
-            <element signature="method#makeMove#0;class#CreatureInstance#0" expanded="false" />
-            <element signature="method#checkStarvation#0;class#CreatureInstance#0" expanded="false" />
-            <element signature="method#checkFoodDown#0;class#CreatureInstance#0" expanded="false" />
-            <element signature="method#checkEgg#0;class#CreatureInstance#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/evolve/foodInstance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/evolve/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-227">
+        <state relative-caret-position="238">
           <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
           <folding>
             <element signature="method#Game#0;class#Game#0" expanded="false" />
@@ -1317,10 +1301,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/evolve/foodInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/evolve/CreatureInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+          <folding>
+            <element signature="method#makeMove#0;class#CreatureInstance#0" expanded="false" />
+            <element signature="method#checkStarvation#0;class#CreatureInstance#0" expanded="false" />
+            <element signature="method#checkFoodDown#0;class#CreatureInstance#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/evolve/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+        <state relative-caret-position="255">
+          <caret line="192" column="38" selection-start-line="192" selection-start-column="38" selection-end-line="192" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

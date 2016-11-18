@@ -69,7 +69,7 @@ public class GameState extends State{
         //Calculate the generation
         int newGeneration = 1;
         creatureInstances.add(new CreatureInstance(game, newType, newX, newY, newHeight, newWidth,
-                newMaxSpeed, newHealth, newEggTime, newfoodAmount, newGeneration, foodTime));
+                newMaxSpeed, newHealth, newEggTime, newfoodAmount, newGeneration, foodTime, 15));
 
 
     }
@@ -190,11 +190,16 @@ public class GameState extends State{
                 //Calculate the generation
                 int newGeneration = eggInstances.get(i).getGeneration() + 1;
 
+                int newAnotherEgg = 15;
+
+                while (Math.random() < 0.22) {
+                    newAnotherEgg -= 1;
+                }
                 //destroy the egg
                 eggInstances.remove(i);
                 //HATCH THE EGG
                 creatureInstances.add(new CreatureInstance(game, newType, newX, newY, newHeight, newWidth,
-                        newMaxSpeed, newHealth, newEggTime, newfoodAmount, newGeneration, newFoodTime));
+                        newMaxSpeed, newHealth, newEggTime, newfoodAmount, newGeneration, newFoodTime, newAnotherEgg));
 
             }
         }
