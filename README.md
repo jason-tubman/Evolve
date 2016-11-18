@@ -1,4 +1,4 @@
-# evolve
+# Evolve
 A Simplistic Evolution Simulator
 
 # What is Evolve?
