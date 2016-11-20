@@ -3,7 +3,6 @@ package evolve;
 import javax.swing.*;
 import java.awt.*;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Vector;
@@ -36,6 +35,8 @@ public class Sidebar extends Entity{
     public void tick() {
         String boxValue = game.getPanel().getBoxValue();
         drawTopStats(boxValue);
+        game.getPanel().getBox().setVisible(true);
+        this.box.setVisible(true);
     }
 
     public void drawTopStats(String boxValue) {
@@ -151,7 +152,7 @@ public class Sidebar extends Entity{
         game.getPanel().getFrame().getContentPane().add(box);
         game.getPanel().getFrame().getContentPane().add(game.getPanel().getBox());
         game.getPanel().getFrame().getContentPane().add(game.getPanel().getCanvas());
-        box.setVisible(true);
+        box.setVisible(false);
         box.setBounds(15, 600, 220, 30);
         game.getPanel().getFrame().pack();
 

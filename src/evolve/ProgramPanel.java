@@ -16,7 +16,7 @@ public class ProgramPanel {
     private JComboBox box;
     //Camera
     private Camera camera;
-
+    private JButton playButton;
     private String title = "EVOLVE";
     private int width, height;
     private int totalNotch = 0;
@@ -135,10 +135,22 @@ public class ProgramPanel {
 
         frame.getContentPane().add(this.box);
 
+        playButton = new JButton("EVOLVE");
+        playButton.setBounds(880, 550, 150, 75);
+        playButton.setVisible(true);
+        frame.getContentPane().add(playButton);
+        playButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playButton.setVisible(false);
+            }
+        });
+
+
 
         frame.add(canvas);
 
-        this.box.setVisible(true);
+        this.box.setVisible(false);
         this.box.setBounds(15, 125, 220, 30);
 
         frame.pack();
@@ -169,6 +181,8 @@ public class ProgramPanel {
     public JComboBox getBox() {
         return this.box;
     }
-
+    public JButton getPlay(){
+        return playButton;
+    }
 
 }

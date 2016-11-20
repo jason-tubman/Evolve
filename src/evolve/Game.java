@@ -43,7 +43,7 @@ public class Game  implements Runnable {
 
         gameState = new GameState(this, world);
         menuState = new MenuState(this);
-        State.setState(gameState);
+        State.setState(menuState);
 
     }
 
@@ -105,6 +105,10 @@ public class Game  implements Runnable {
                 ticks = 0;
                 timer = 0;
 
+            }
+
+            if (!panel.getPlay().isVisible()) {
+                gameState.setState(gameState);
             }
         }
 
