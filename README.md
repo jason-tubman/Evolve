@@ -13,4 +13,4 @@ These 200 creatures have the ability to grow teeth and mutate into carnivores, c
 Food respawns approximately a third of a second after it has been eaten to ensure their is always approximately 300+ food in the world so creates don't die of starvation too regularly. 
 
 #Where to find it
-Right here, clone the code if you want it! Otherwise, click this link:
+Right here, clone the code if you want it!
