@@ -1,26 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="EvolveWeb" />
+    </artifacts-to-build>
+  </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/evolve/CreatureInstance.java" line="174" />
     <bookmark url="file://$PROJECT_DIR$/src/evolve/Assets.java" line="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fc00a94-2d97-4707-8b30-3f8ab6332c02" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/evolve/evolve/Game.class" afterPath="$PROJECT_DIR$/out/production/evolve/evolve/Game.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/evolve/evolve/MenuState.class" afterPath="$PROJECT_DIR$/out/production/evolve/evolve/MenuState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/evolve/evolve/ProgramPanel.class" afterPath="$PROJECT_DIR$/out/production/evolve/evolve/ProgramPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/evolve/evolve/Sidebar$1.class" afterPath="$PROJECT_DIR$/out/production/evolve/evolve/Sidebar$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/evolve/evolve/Sidebar$2.class" afterPath="$PROJECT_DIR$/out/production/evolve/evolve/Sidebar$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/evolve/evolve/Sidebar$3.class" afterPath="$PROJECT_DIR$/out/production/evolve/evolve/Sidebar$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/evolve/evolve/Sidebar$4.class" afterPath="$PROJECT_DIR$/out/production/evolve/evolve/Sidebar$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/evolve/evolve/Sidebar$5.class" afterPath="$PROJECT_DIR$/out/production/evolve/evolve/Sidebar$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/evolve/evolve/Sidebar$6.class" afterPath="$PROJECT_DIR$/out/production/evolve/evolve/Sidebar$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/evolve/evolve/Sidebar.class" afterPath="$PROJECT_DIR$/out/production/evolve/evolve/Sidebar.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/evolve/Game.java" afterPath="$PROJECT_DIR$/src/evolve/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/evolve/MenuState.java" afterPath="$PROJECT_DIR$/src/evolve/MenuState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/evolve/ProgramPanel.java" afterPath="$PROJECT_DIR$/src/evolve/ProgramPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/evolve/Sidebar.java" afterPath="$PROJECT_DIR$/src/evolve/Sidebar.java" />
     </list>
     <ignored path="Evolve.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,83 +29,20 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\Jason\Documents\Evolve\exportToHTML" />
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="Evolve" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Sidebar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/evolve/Sidebar.java">
+      <file leaf-file-name="Launcher.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/evolve/Launcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="154" column="28" selection-start-line="154" selection-start-column="28" selection-end-line="154" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuState.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/evolve/MenuState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/evolve/GameState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="237" column="38" selection-start-line="237" selection-start-column="38" selection-end-line="237" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#generateFirstCreatures#0;class#GameState#0" expanded="false" />
-                <element signature="method#foodAtLocation#0;class#GameState#0" expanded="false" />
-                <element signature="method#creatureAtLocation#0;class#GameState#0" expanded="false" />
-                <element signature="method#addNewFood#0;class#GameState#0" expanded="false" />
-                <element signature="method#hatchEgg#0;class#GameState#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/evolve/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="110" column="44" selection-start-line="110" selection-start-column="44" selection-end-line="110" selection-end-column="44" />
-              <folding>
-                <element signature="method#Game#0;class#Game#0" expanded="false" />
-                <element signature="method#render#0;class#Game#0" expanded="false" />
-                <element signature="method#tick#0;class#Game#0" expanded="false" />
-                <element signature="method#start#0;class#Game#0" expanded="false" />
-                <element signature="method#stop#0;class#Game#0" expanded="false" />
-                <element signature="method#getSeconds#0;class#Game#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProgramPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/evolve/ProgramPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#keyTyped#0;class#2600:4053" expanded="false" />
-                <element signature="method#keyPressed#0;class#2600:4053" expanded="false" />
-                <element signature="e#4419#4420#0" expanded="true" />
-                <element signature="e#4479#4480#0" expanded="true" />
-                <element signature="e#5129#5130#0" expanded="true" />
-                <element signature="e#5162#5163#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -153,9 +82,9 @@
         <option value="$PROJECT_DIR$/src/evolve/CreatureInstance.java" />
         <option value="$PROJECT_DIR$/src/evolve/GameState.java" />
         <option value="$PROJECT_DIR$/src/evolve/Sidebar.java" />
-        <option value="$PROJECT_DIR$/src/evolve/MenuState.java" />
         <option value="$PROJECT_DIR$/src/evolve/ProgramPanel.java" />
         <option value="$PROJECT_DIR$/src/evolve/Game.java" />
+        <option value="$PROJECT_DIR$/src/evolve/MenuState.java" />
       </list>
     </option>
   </component>
@@ -263,9 +192,9 @@
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../deco2800-2016-dangernoodles" />
   </component>
   <component name="RecentsManager">
@@ -739,12 +668,12 @@
       <workItem from="1478470956748" duration="11647000" />
       <workItem from="1479417812491" duration="12371000" />
       <workItem from="1479497968042" duration="7844000" />
-      <workItem from="1479670209897" duration="8408000" />
+      <workItem from="1479670209897" duration="8999000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68567000" />
+    <option name="totallyTimeSpent" value="69158000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -758,12 +687,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37737843" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37737843" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2453125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -774,7 +704,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1343,14 +1272,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/evolve/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="80" selection-start-line="8" selection-start-column="80" selection-end-line="8" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/evolve/eggInstance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="802">
@@ -1450,6 +1371,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/evolve/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="110" column="40" selection-start-line="110" selection-start-column="40" selection-end-line="110" selection-end-column="40" />
+          <folding>
+            <element signature="method#Game#0;class#Game#0" expanded="false" />
+            <element signature="method#render#0;class#Game#0" expanded="false" />
+            <element signature="method#tick#0;class#Game#0" expanded="false" />
+            <element signature="method#start#0;class#Game#0" expanded="false" />
+            <element signature="method#stop#0;class#Game#0" expanded="false" />
+            <element signature="method#getSeconds#0;class#Game#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/evolve/MenuState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/evolve/ProgramPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="59">
@@ -1466,28 +1410,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/evolve/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/evolve/Launcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="110" column="44" selection-start-line="110" selection-start-column="44" selection-end-line="110" selection-end-column="44" />
-          <folding>
-            <element signature="method#Game#0;class#Game#0" expanded="false" />
-            <element signature="method#render#0;class#Game#0" expanded="false" />
-            <element signature="method#tick#0;class#Game#0" expanded="false" />
-            <element signature="method#start#0;class#Game#0" expanded="false" />
-            <element signature="method#stop#0;class#Game#0" expanded="false" />
-            <element signature="method#getSeconds#0;class#Game#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/evolve/MenuState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="204">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1496,11 +1423,20 @@
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
-          <artifact-editor />
+          <artifact-editor>
+            <show-content>
+              <type id="artifact" />
+              <type id="library" />
+              <type id="javaee-facet-resources" />
+              <type id="jpa-descriptors" />
+            </show-content>
+          </artifact-editor>
+          <last-edited>EvolveWeb</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

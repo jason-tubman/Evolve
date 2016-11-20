@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="evolve:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/evolve_jar</output-path>
+    <root id="archive" name="evolve.jar">
+      <element id="module-output" name="evolve" />
+    </root>
+  </artifact>
+</component>

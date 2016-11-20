@@ -108,7 +108,7 @@ public class Game  implements Runnable {
             }
 
             if (!panel.getPlay().isVisible()) {
-                gameState.setState(gameState);
+                State.setState(gameState);
             }
         }
 

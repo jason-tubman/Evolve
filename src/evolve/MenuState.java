@@ -1,6 +1,5 @@
 package evolve;
 
-import javax.swing.*;
 import java.awt.*;
 
 /**
