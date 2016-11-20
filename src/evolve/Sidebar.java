@@ -179,15 +179,15 @@ public class Sidebar extends Entity{
         g.drawString("Age:  ", x+17, y+670);
         g.drawString(Double.toString(game.getGameState().getCreatures().get(clicked).getAge()), x+60, y + 670);
         g.drawString("Speed:  ", x+17, y+715);
-        g.drawString(Double.toString(round(game.getGameState().getCreatures().get(clicked).getMaxSpeed(), 2)), x+80, y + 715);
+        g.drawString(Double.toString(round(game.getGameState().getCreatures().get(clicked).getMaxSpeed(), 3)), x+80, y + 715);
         g.drawString("Food Amount:  ", x+17, y+760);
-        g.drawString(Double.toString(round(game.getGameState().getCreatures().get(clicked).getFoodAmount(), 2)), x+140, y + 760);
+        g.drawString(Double.toString(round(game.getGameState().getCreatures().get(clicked).getFoodAmount(), 3)), x+140, y + 760);
         g.drawString("Time To Fertilise:  ", x+17, y+805);
-        g.drawString(Double.toString(round(game.getGameState().getCreatures().get(clicked).getEggTime(), 2)), x+160, y + 805);
+        g.drawString(Double.toString(round(game.getGameState().getCreatures().get(clicked).getEggTime(), 3)), x+160, y + 805);
         g.drawString("Life Expectancy:  ", x+17, y+850);
-        g.drawString(Double.toString(round(game.getGameState().getCreatures().get(clicked).getLifeTime(), 2)), x+160, y + 850);
+        g.drawString(Double.toString(round(game.getGameState().getCreatures().get(clicked).getLifeTime(), 3)), x+160, y + 850);
         g.drawString("Digestion Time:  ", x+17, y+895);
-        g.drawString(Double.toString(round(game.getGameState().getCreatures().get(clicked).getDigestionTime(), 2)), x+150, y + 895);
+        g.drawString(Double.toString(round(game.getGameState().getCreatures().get(clicked).getDigestionTime(), 3)), x+150, y + 895);
         g.drawString("Direction:  ", x+17, y+940);
         if (game.getGameState().getCreatures().get(clicked).getYDir().intValue() == 1) {
             //DOWN
