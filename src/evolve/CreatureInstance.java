@@ -1,5 +1,6 @@
 package evolve;
 
+import javax.swing.*;
 import java.awt.*;
 
 /**
@@ -25,7 +26,7 @@ public class CreatureInstance extends Entity {
     private double livingSeconds = 0;
     private int foodAdded = 0;
     private double timeBorn;
-
+    private String name;
     double yDirection = 0;
     double xDirection = 0;
 
@@ -45,7 +46,7 @@ public class CreatureInstance extends Entity {
         this.type = type;
         this.eggTime = eggTime; //How long it takes to lay an egg
         this.anotherEgg = anotherEgg;
-
+        this.name = NameGenerator.generateName();
         this.foodAmount = foodAmount; //How much food it's grabbed
         timeBorn = game.getSeconds();
         getDirection();
@@ -93,6 +94,12 @@ public class CreatureInstance extends Entity {
     public void getDirection() {
         yDirection = maxSpeed * (Math.random() > 0.5? 1 : -1);
         xDirection = maxSpeed * (Math.random() > 0.5? 1 : -1);
+        if (Math.random() < 0.25) {
+            yDirection = 0;
+        }
+        if (Math.random() < 0.25) {
+            xDirection = 0;
+        }
     }
 
     @Override
@@ -218,5 +225,20 @@ public class CreatureInstance extends Entity {
     }
     public double getEggTime() {
         return eggTime;
+    }
+    public String getName() {
+        return name;
+    }
+    public double getAge() {
+        return this.game.getSeconds() - timeBorn;
+    }
+    public Double getFoodAmount() {
+        return this.foodAmount;
+    }
+    public Double getXDir() {
+        return this.xDirection;
+    }
+    public Double getYDir() {
+        return this.yDirection;
     }
 }

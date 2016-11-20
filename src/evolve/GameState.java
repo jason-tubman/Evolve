@@ -22,6 +22,7 @@ public class GameState extends State{
         super(game);
         createCreature();
         this.world = world;
+
     }
 
     public void createCreature() {
@@ -233,12 +234,14 @@ public class GameState extends State{
         g.fillRect(0, 0, this.game.getPanel().getCanvas().getWidth(), 50);
         g.setColor(Color.LIGHT_GRAY);
         g.setFont(new Font("Arial", Font.BOLD, 30));
-        g.drawString("EVOLVE ", 10, 38);
+        g.drawString("EVOLVE ", 20, 38);
         g.setFont(new Font("Arial", Font.BOLD, 15));
-        g.drawString("A simple evolution Simulator", 140, 35);
+        g.drawString("A simple evolution Simulator", 160, 35);
         g.drawString("Food: ", 450, 35);
         g.drawString(Integer.toString(getFoods().size()), 500, 35);
         g.drawString("Herbivores: ", 550, 35);
+        g.drawString("TIME ELAPSED: ", 1760, 35);
+        g.drawString(Integer.toString(game.getSeconds()), 1880, 35);
         int herbivores = 0;
         int carnivores = 0;
         for (int i = 0; i < getCreatures().size(); i++) {

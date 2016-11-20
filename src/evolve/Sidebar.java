@@ -1,10 +1,12 @@
 package evolve;
 
+import javax.swing.*;
 import java.awt.*;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
+import java.util.Vector;
 
 
 /**
@@ -16,6 +18,9 @@ public class Sidebar extends Entity{
     private int x;
     private int y;
     private Game game;
+    private int clicked = 0;
+    private JComboBox box;
+
     public Sidebar(Game game, double x, double y, double height,
                    double width) {
         super(game, x, y, height, width);
@@ -24,6 +29,7 @@ public class Sidebar extends Entity{
         this.height = (int) height;
         this.width = (int) width;
         this.game = game;
+        createTopStatsList();
     }
 
     @Override
@@ -90,7 +96,6 @@ public class Sidebar extends Entity{
                 }
                 default:
             }
-
     }
 
     @Override
@@ -131,5 +136,88 @@ public class Sidebar extends Entity{
         } catch (IndexOutOfBoundsException e) {
 
         }
+        g.setColor(Color.BLACK);
+        g.setFont(new Font("Arial", Font.BOLD, 22));
+        g.drawString("CREATURE STATS  ", x+17, y+520);
+        drawBottomStats(g);
+
     }
+    public void createTopStatsList() {
+        Vector stats = new Vector();
+        for(int i = 1; i < 22; i++){
+            stats.addElement(Integer.toString(i));
+        }
+        this.box = new JComboBox(stats);
+        game.getPanel().getFrame().getContentPane().add(box);
+        game.getPanel().getFrame().getContentPane().add(game.getPanel().getBox());
+        game.getPanel().getFrame().getContentPane().add(game.getPanel().getCanvas());
+        box.setVisible(true);
+        box.setBounds(15, 600, 220, 30);
+        game.getPanel().getFrame().pack();
+
+    }
+
+    public void updateClicked() {
+        try {
+            int size = game.getGameState().getCreatures().size();
+            clicked = size - this.box.getSelectedIndex() - 1;
+        }
+        catch (Exception e) {
+        }
+    }
+
+    public void drawBottomStats(Graphics g) {
+        updateClicked();
+        g.setColor(Color.BLACK);
+        g.setFont(new Font("Arial", Font.BOLD, 17));
+        g.drawString("Name:  ", x+17, y+585);
+
+        g.drawString(game.getGameState().getCreatures().get(clicked).getName(), x+80, y + 585);
+        g.drawString("Size:  ", x+17, y+625);
+        g.drawString(Double.toString(game.getGameState().getCreatures().get(clicked).getWidth()), x+65, y + 625);
+        g.drawString("Age:  ", x+17, y+670);
+        g.drawString(Double.toString(game.getGameState().getCreatures().get(clicked).getAge()), x+60, y + 670);
+        g.drawString("Speed:  ", x+17, y+715);
+        g.drawString(Double.toString(game.getGameState().getCreatures().get(clicked).getMaxSpeed()), x+80, y + 715);
+        g.drawString("Food Amount:  ", x+17, y+760);
+        g.drawString(Double.toString(game.getGameState().getCreatures().get(clicked).getFoodAmount()), x+140, y + 760);
+        g.drawString("Time To Fertilise:  ", x+17, y+805);
+        g.drawString(Double.toString(game.getGameState().getCreatures().get(clicked).getEggTime()), x+160, y + 805);
+        g.drawString("Life Expectancy:  ", x+17, y+850);
+        g.drawString(Double.toString(game.getGameState().getCreatures().get(clicked).getLifeTime()), x+160, y + 850);
+        g.drawString("Digestion Time:  ", x+17, y+895);
+        g.drawString(Double.toString(game.getGameState().getCreatures().get(clicked).getDigestionTime()), x+150, y + 895);
+        g.drawString("Direction:  ", x+17, y+940);
+        if (game.getGameState().getCreatures().get(clicked).getYDir().intValue() == 1) {
+            //DOWN
+            if (game.getGameState().getCreatures().get(clicked).getXDir().intValue() == 1) {
+                g.drawString("SOUTH EAST", x+100, y+940);
+            } else if (game.getGameState().getCreatures().get(clicked).getXDir().intValue() == 0) {
+                g.drawString("SOUTH", x+100, y+940);
+            } else if (game.getGameState().getCreatures().get(clicked).getXDir().intValue() == -1) {
+                g.drawString("SOUTH WEST", x+100, y+940);
+            }
+        } else if (game.getGameState().getCreatures().get(clicked).getYDir().intValue() == 0) {
+            //NOT DOWN
+            if (game.getGameState().getCreatures().get(clicked).getXDir().intValue() == 1) {
+                g.drawString("EAST", x+100, y+940);
+            } else if (game.getGameState().getCreatures().get(clicked).getXDir().intValue() == 0) {
+                g.drawString("STATIONARY", x+100, y+940);
+            } else if (game.getGameState().getCreatures().get(clicked).getXDir().intValue() == -1) {
+                g.drawString("WEST", x+100, y+940);
+            }
+        } else if (game.getGameState().getCreatures().get(clicked).getYDir().intValue() == -1) {
+            //UP
+            if (game.getGameState().getCreatures().get(clicked).getXDir().intValue() == 1) {
+                g.drawString("NORTH EAST", x+100, y+940);
+            } else if (game.getGameState().getCreatures().get(clicked).getXDir().intValue() == 0) {
+                g.drawString("NORTH", x+100, y+940);
+            } else if (game.getGameState().getCreatures().get(clicked).getXDir().intValue() == -1) {
+                g.drawString("NORTH WEST", x+100, y+940);
+            }
+        }
+
+
+    }
+
 }

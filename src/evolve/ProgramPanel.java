@@ -135,10 +135,12 @@ public class ProgramPanel {
 
         frame.getContentPane().add(this.box);
 
+
         frame.add(canvas);
 
         this.box.setVisible(true);
-        this.box.setBounds(15, 115, 220, 30);
+        this.box.setBounds(15, 125, 220, 30);
+
         frame.pack();
 
     }
@@ -164,5 +166,9 @@ public class ProgramPanel {
     public String getBoxValue() {
         return this.box.getSelectedItem().toString();
     }
+    public JComboBox getBox() {
+        return this.box;
+    }
+
 
 }
