@@ -242,6 +242,8 @@ public class GameState extends State{
         g.drawString("Herbivores: ", 550, 35);
         g.drawString("TIME ELAPSED: ", 1760, 35);
         g.drawString(Integer.toString(game.getSeconds()), 1880, 35);
+        g.drawString("FPS: ", 1660, 35);
+        g.drawString(Double.toString(game.getFPS()), 1700, 35);
         int herbivores = 0;
         int carnivores = 0;
         for (int i = 0; i < getCreatures().size(); i++) {

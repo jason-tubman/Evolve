@@ -16,7 +16,6 @@ public class Game  implements Runnable {
     private int seconds = 0;
     private BufferStrategy bs;
     private Graphics g;
-
     private int width, height;
 
     private String title;
@@ -74,6 +73,7 @@ public class Game  implements Runnable {
             State.getState().tick();
         }
 
+
     }
 
 
@@ -89,6 +89,10 @@ public class Game  implements Runnable {
         long lastTime = System.nanoTime();
 
         while (running) {
+            if (!panel.getPlay().isVisible()) {
+                State.setState(gameState);
+            }
+
             now = System.nanoTime();
             delta += (now - lastTime) / timePerTick;
             timer += now - lastTime;
@@ -107,9 +111,7 @@ public class Game  implements Runnable {
 
             }
 
-            if (!panel.getPlay().isVisible()) {
-                State.setState(gameState);
-            }
+
         }
 
         stop();
