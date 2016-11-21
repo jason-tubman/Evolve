@@ -55,7 +55,7 @@ public class GameState extends State{
             newMaxSpeed += 0.02;
         }
         //Calculate the new max health
-        double newHealth = 60;
+        double newHealth = 55 + (int)(Math.random() * 10);
         while (Math.random() < 0.33) {
             newHealth += 1;
         }
