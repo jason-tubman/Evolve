@@ -37,8 +37,8 @@ public class eggInstance extends Entity {
         this.health = lifeTime;
         this.creatureHeight = height;
         this.creatureWidth = width;
-        this.width = (int) width/2;
-        this.height = (int) height/2;
+        this.width = (int) width/3;
+        this.height = (int) height/3;
 
         if (this.width == creatureWidth) {
             this.width = 2;

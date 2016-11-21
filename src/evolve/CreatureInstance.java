@@ -100,6 +100,10 @@ public class CreatureInstance extends Entity {
         if (Math.random() < 0.25) {
             xDirection = 0;
         }
+        double yMultipler = 0.5 + Math.random()*1;
+        yDirection = yDirection* yMultipler;
+        double xMultipler = 0.5 + Math.random()*1;
+        xDirection = xDirection*xMultipler;
     }
 
     @Override
